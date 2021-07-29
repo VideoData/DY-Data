@@ -1,0 +1,44 @@
+@mixin flex(){display:flex;align-items: center;justify-content: space-around;}
+@mixin ma($a:0px auto){margin: $a;}
+@mixin br($br:10px){border-radius: $br}
+@mixin wh($w:100%,$h:100%,$b:''){width:$w;height: $h;background: $b}
+@mixin text($fs:20px,$c:'',$h:''){font-size:$fs;color: $c;text-align: center;line-height: $h}
+@mixin bd($b:1Px,$s:'',$c:''){border: $b $s $c}
+@mixin pr(){position: relative;}
+@mixin pa(){position: absolute;}
+@mixin cp(){ cursor: pointer;}
+@mixin flexcenter(){display:flex;justify-content:center;align-items:center;}
+@mixin flexstart(){display:flex;justify-content:flex-start ;align-items:center;}
+@mixin flexsb(){display:flex;justify-content: space-between ;align-items:center;}
+@mixin tl(){text-align: left;}
+@mixin linesH($row: 2){overflow:hidden;text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical;-webkit-line-clamp:$row; }
+@mixin slh{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+$bg-menu-selected: #E2E3EE; // 左侧菜单按钮选中背景色 区分区域背景色
+/* 滚动条 */
+@mixin scrollBar($width: 10px, $radius: 5px, $shadow: null, $height: 20px) {
+    &::-webkit-scrollbar {
+      width: $width;
+      height: $height;
+    }
+  
+    &::-webkit-scrollbar-track {
+      @if ($shadow != null) {
+        -webkit-box-shadow: $shadow;
+      }
+      @if ($radius != null) {
+        border-radius: $radius;
+      }
+      background: transparent;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      @if ($shadow != null) {
+        -webkit-box-shadow: $shadow;
+      }
+      @if ($radius != null) {
+        border-radius: $radius;
+      }
+      background: $bg-menu-selected;
+    }
+}
+$background: #42b983;
