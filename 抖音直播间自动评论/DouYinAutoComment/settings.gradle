@@ -1,0 +1,2 @@
+include ':app', ':FloatMenu'
+rootProject.name='AutoComment'
