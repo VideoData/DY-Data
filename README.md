@@ -32,6 +32,6 @@
 ## 疑问
 <details>
   <summary>还有其他短视频平台可以交流吗？</summary>
-  iuap design 目前可供学习交流的平台是抖音。Tiktok和快手大家有兴趣可以一起讨论交流。
+  目前可供学习交流的平台是抖音。Tiktok和快手大家有兴趣可以一起讨论交流。
 </details>
 
