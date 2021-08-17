@@ -1,0 +1,52 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{HH:mm:ss.SSS} %-5level[%thread] %logger{30} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="DEBUG-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--             按天轮转 -->
+            <fileNamePattern>log/%d{yyyy-MM}/crawler.%d{yyyy-MM-dd}.debug.log</fileNamePattern>
+            <!--             保存 30 天的历史记录，最大大小为 30MB -->
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>30MB</totalSizeCap>
+        </rollingPolicy>
+        <!--         将 immediateFlush 设置为 false 可以获得更高的日志吞吐量 -->
+        <immediateFlush>true</immediateFlush>
+        <!--         默认为 ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+        <encoder>
+            <pattern>%date{HH:mm:ss.SSS} %-5level[%thread] %logger{50} - %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <!-- 在日志配置级别的基础上过滤掉info级别以下的日志 -->
+            <level>DEBUG</level>
+        </filter>
+    </appender>
+    <appender name="INFO-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--             按天轮转 -->
+            <fileNamePattern>log/%d{yyyy-MM}/crawler.%d{yyyy-MM-dd}.info.log</fileNamePattern>
+            <!--             保存 30 天的历史记录，最大大小为 30MB -->
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>30MB</totalSizeCap>
+        </rollingPolicy>
+        <!--         将 immediateFlush 设置为 false 可以获得更高的日志吞吐量 -->
+        <immediateFlush>true</immediateFlush>
+        <!--         默认为 ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+        <encoder>
+            <pattern>%date{HH:mm:ss.SSS} %-5level[%thread] %logger{50} - %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <!-- 在日志配置级别的基础上过滤掉info级别以下的日志 -->
+            <level>INFO</level>
+        </filter>
+    </appender>
+    <root level="debug">
+        <appender-ref ref="DEBUG-FILE"/>
+        <appender-ref ref="INFO-FILE"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

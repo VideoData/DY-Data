@@ -1,0 +1,71 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version 'beta'
+
+repositories {
+    mavenCentral()
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'cn.com.sun.ksv.crawler.CrawlerRunner'
+    }
+    // 包含所有的jar文件
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+
+def releaseDir = "$buildDir/release/ksv-crawler"
+task release() {
+    dependsOn('jar')
+    dependsOn('copyConfig')
+    dependsOn('copyFfmpeg')
+    dependsOn('copyBat')
+    dependsOn('copyJre')
+    dependsOn('copyJar')
+}
+
+task copyConfig(type: Copy) {
+    from('config')
+    into("${releaseDir}/config")
+}
+task copyFfmpeg(type: Copy) {
+    from('ffmpeg')
+    into("${releaseDir}/ffmpeg")
+}
+task copyWebDriver(type: Copy) {
+    from('webdriver')
+    into("${releaseDir}/webdriver")
+}
+task copyJar(type: Copy) {
+    from('build/libs')
+    into("${releaseDir}/jar")
+}
+task copyJre(type: Copy) {
+    from('jdk64')
+    into("${releaseDir}/jdk64")
+}
+task copyBat(type: Copy) {
+    from('crawler.bat')
+    from('process.bat')
+    from('input.txt')
+    from('base.jpg')
+    into("${releaseDir}")
+}
+// 确保先打包再copy
+copyJar.mustRunAfter jar
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // selenium
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
+    // https://mvnrepository.com/artifact/ws.schild/jave-core
+    compile group: 'ws.schild', name: 'jave-core', version: '3.0.0'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.0'
+}
