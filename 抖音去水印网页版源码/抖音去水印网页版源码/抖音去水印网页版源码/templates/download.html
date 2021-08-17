@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下载</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/static/style.1.0.4.min.css" rel="stylesheet">
+    <style>
+        a, a:hover, button, button:hover {
+            text-decoration-line: none;
+            -webkit-transition: all .5s;
+            transition: all .5s;
+        }
+
+        a {
+            color: #333;
+        }
+
+        .contact_form h1 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .download-div{
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        h1 span img{
+            width: 20%;
+        }
+    </style>
+    <link href="/static/responsive.1.0.1.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="col-md-12">
+    <div class="contact_form ">
+        <h1 style="text-align: center"><a href="/" target="_self">
+            <span><img src="/static/logo.png" alt=""></span>
+        </a></h1>
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <h5 style="text-align: center; color: #67C23A">解析成功！</h5>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-10 text-center">
+                    <video controls="controls" autoplay="autoplay" width="100%" loop="loop" muted="muted">
+                        <source src="{{ video_url_web }}" type="video/mp4"/>
+                    </video>
+                </div>
+                <div class="download-div col-md-offset-1 col-md-10 text-center">
+                    {#                    <a id="download-btn" class="sim-btn btn-hover-new btn btn-block"#}
+                    {#                       href="/static/video/{{ video_name }}" download="{{ video_name }}">下载</a>#}
+                    <span id="download-btn2" class="sim-btn btn-hover-new btn btn-block">下载</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="/static/contact.1.0.4.js"></script>
+<script>
+    setTimeout(function () {
+        $('#download-btn2')[0].click();
+    }, 300)
+    let downloadUrlFile = function (url) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = 'blob';
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                // 获取blob数据并保存
+                const blob = new Blob([xhr.response], {type: "video/mp4"})
+                const a = document.createElement("a")
+                a.href = URL.createObjectURL(blob)
+                a.download = "{{ video_name }}"
+                a.click()
+                URL.revokeObjectURL(a.href)
+                a.remove();
+            }
+        };
+        xhr.send();
+    }
+    $('#download-btn2').click(function () {
+        downloadUrlFile('{{ video_url_web }}');
+    })
+</script>
+</html>
