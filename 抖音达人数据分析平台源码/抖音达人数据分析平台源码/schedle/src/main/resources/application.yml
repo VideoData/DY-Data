@@ -1,0 +1,64 @@
+spring:
+  datasource:
+    url: jdbc:mysql://115.29.172.197:3306/dy?useSSL=false&autoReconnect=true
+    username: root
+    password: dyanalysisroot123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      max-lifetime: 1200000
+  #    url: jdbc:mysql://localhost:3306/dy?characterEncoding=utf8&serverTimezone=UTC
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQLDialect
+  # qq邮箱
+  mail:
+    host: smtp.qq.com
+    username: 1941189375@qq.com
+    password: csowwurqctlhejje
+    port: 465 #默认25
+    protocol: smtp
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.port: 994
+    properties.mail.display.sendmail: DoubleFJ
+    properties.mail.display.sendname: Spring Boot Email
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+    default-encoding: utf-8
+    from: 1941189375@qq.com
+  data:
+    mongodb:
+      uri: mongodb://dyuser:rootmongody123Jd@115.29.172.197:27019/dy
+      option:
+        connectTimeout: 3000
+        max-connection-idle-time: 0
+        always-use-m-beans: false
+        heartbeat-connect-timeout: 200000
+        heartbeat-frequency: 10000
+        heartbeat-socket-timeout: 200000
+        local-threshold: 15
+        max-connection-life-time: 0
+        max-connection-per-host: 100
+        max-wait-time: 1200000
+        min-connection-per-host: 0
+        min-heartbeat-frequency: 5000
+        server-selection-timeout: 600000000
+        socket-keep-alive: true
+        socket-timeout: 0
+        ssl-enabled: false
+        ssl-invalid-host-name-allowed: false
+        threads-allowed-to-block-for-connection-multiplier: 5
+#      port: 8858
+debug: false
+my:
+  filepath: E:/桌面/dy/catgory.json
+  temppath: E:/桌面/dy/tempSpider.txt
+  linuxpath: F:/study/ideaProject/java/dy/linuxData/linuxTemp.txt        #临时存储
+  categoryfilepath: F:/study/ideaProject/java/dy/linuxData/category.json  #星图的达人分类索引
+  emailto: 1941189375@qq.com      #爬虫发生异常时，将邮件信息发送到指定的邮箱
+  linux:
+    hasChrome: true #是否指定chrome位置，在阿里云服务器中设置为false,因为chrome驱动已经安装好了
+    chrome: E:/ITSoft/chromedriver.exe
+    isTask: false  #是否开启定时任务

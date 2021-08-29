@@ -1,0 +1,61 @@
+spring:
+  datasource:
+    url: jdbc:mysql://115.29.172.197:3306/dy?useSSL=false&autoReconnect=true&autoReconnect=true
+    username: root
+    password: dyanalysisroot123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name:
+      max-lifetime: 120000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  #    url: jdbc:mysql://localhost:3306/dy?characterEncoding=utf8&serverTimezone=UTC
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQLDialect
+  data:
+    mongodb:
+      uri: mongodb://dyuser:rootmongody123Jd@115.29.172.197:27019/dy
+      option:
+        connectTimeout: 0
+        max-connection-idle-time: 0
+        always-use-m-beans: false
+        heartbeat-connect-timeout: 200000
+        heartbeat-frequency: 10000
+        heartbeat-socket-timeout: 200000
+        local-threshold: 15
+        max-connection-life-time: 0
+        max-connection-per-host: 100
+        max-wait-time: 1200000
+        min-connection-per-host: 0
+        min-heartbeat-frequency: 5000
+        server-selection-timeout: 600000000
+        socket-keep-alive: true
+        socket-timeout: 0
+        ssl-enabled: false
+        ssl-invalid-host-name-allowed: false
+        threads-allowed-to-block-for-connection-multiplier: 5
+  profiles:
+    active: prod
+debug: false
+my:
+  skip: 0
+  device: D:\\dy\\代碼\\device_id.txt
+  pagepath: D:\\dy\\代碼\\pageTemp.txt
+  trackvid: C:/Users/Administrator/Desktop/抖音临时/爬取每30s追踪/vid8.txt #追踪的视频id列表
+  trackvideo: C:/Users/Administrator/Desktop/抖音临时/爬取每30s追踪/track8.txt #追踪视频的数据存储
+  isaddnew: true  #是否获取视频
+  addnewNum: 10  #追踪视频数量
+  signatureHtml: F:/study/ideaProject/java/dy/cal/src/main/resources/getSign.html #获取web签名js
+  linux:
+    hasChrome: true #是否指定chrome位置
+    chrome: E:/ITSoft/chromedriver.exe
+    hasUi: true
+server:
+  port: 8082

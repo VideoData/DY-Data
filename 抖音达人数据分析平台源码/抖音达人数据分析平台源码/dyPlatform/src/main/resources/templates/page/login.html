@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>小视频数据分析平台</title>
+
+    <!-- Favicons -->
+    <link href="/static/img/favicon.png" rel="icon">
+    <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/static/lib/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/style-responsive.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<div id="login-page">
+    <div class="container">
+        <form id="myform" class="form-login" action="/login" method="post" enctype="multipart/form-data">
+            <h2 class="form-login-heading">登录</h2>
+            <div class="login-wrap">
+                账户/邮箱：<br><input id="accountNumber" name="accountNumber" type="text" class="form-control"
+                                 placeholder="账户/邮箱" autofocus>
+                <br>
+                密码：<input id="passwd" name="passwd" type="password" class="form-control" placeholder="Password">
+                <label class="checkbox" style="margin-left: 20px">
+                    <input id="remember" type="checkbox" name="remember" value="remember-me"> 记住我
+                    <span class="pull-right">
+            <a data-toggle="modal" href="login.html#myModal"> 忘记密码?</a>
+            </span>
+                </label>
+                <button class="btn btn-primary btn-block login_btn">
+                    <i class="fa fa-lock"></i> 登录
+                </button>
+                <hr>
+                <div class="registration">
+                    <a href="/register">
+                        创建账户
+                    </a>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal"
+                 class="modal fade">
+                <div class="modal-dialog" style="max-width: 500px">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">密码找回</h4>
+                        </div>
+                        <div class="modal-body" style="padding-left: 35px;padding-right: 35px">
+                            <form id="modal-form" class="form-login" style="margin: 50px">
+                                <div class="form-group has-feedback">
+                                    <!--                <label for="phoneNum">邮箱：</label>-->
+                                    <div class="input-group">
+                                    <span class="input-group-addon"><span
+                                            class="glyphicon glyphicon-phone"></span></span>
+                                        <input name="email" id="phoneNum" class="form-control" placeholder="请输入邮箱或者电话号码"
+                                               type="text">
+                                    </div>
+                                    <span style="color:red;display: none;" class="tips"></span>
+                                    <span style="display: none;"
+                                          class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                    <span style="display: none;"
+                                          class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-7" style="padding-right: 0px">
+                                        <div class="form-group has-feedback">
+                                            <!--                        <label for="idcode-btn">校验码</label>-->
+                                            <div class="input-group">
+                                            <span class="input-group-addon"><span
+                                                    class="glyphicon glyphicon-qrcode"></span></span>
+                                                <input name="code" id="idcode-btn" class="form-control"
+                                                       placeholder="请输入校验码"
+                                                       maxlength="6"
+                                                       type="text" style="padding-right: 12px">
+                                            </div>
+                                            <span style="color:red;display: none;" class="tips"></span>
+                                            <span style="display: none;"
+                                                  class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                            <span style="display: none;"
+                                                  class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-5 text-center" style="padding-left: 0px">
+                                        <button type="button" id="loadingButton" class="btn btn-primary">获取校验码
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <!--                <label for="password">密码</label>-->
+                                    <div class="input-group">
+                                    <span class="input-group-addon"><span
+                                            class="glyphicon glyphicon-lock"></span></span>
+                                        <input name="passwd" id="password" class="form-control" placeholder="请输入密码"
+                                               maxlength="20"
+                                               type="password">
+                                    </div>
+
+                                    <span style="color:red;display: none;" class="tips"></span>
+                                    <span style="display: none;"
+                                          class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                    <span style="display: none;"
+                                          class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                </div>
+
+                                <div class="form-group has-feedback">
+                                    <!--                <label for="passwordConfirm">确认密码</label>-->
+                                    <div class="input-group">
+                                    <span class="input-group-addon"><span
+                                            class="glyphicon glyphicon-lock"></span></span>
+                                        <input id="passwordConfirm" class="form-control" placeholder="请确认密码"
+                                               maxlength="20"
+                                               type="password">
+                                    </div>
+                                    <span style="color:red;display: none;" class="tips"></span>
+                                    <span style="display: none;"
+                                          class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                    <span style="display: none;"
+                                          class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                            <button id="find_passwd_btn" class="btn btn-theme" type="button">确认</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal -->
+        </form>
+    </div>
+</div>
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="/static/lib/jquery/jquery.min.js"></script>
+<script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/myjs/jquery.validate.js"></script>
+<!--BACKSTRETCH-->
+<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+<script type="text/javascript" src="/static/lib/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="/static/myjs/myjs/login.js"></script>
+</body>
+
+</html>

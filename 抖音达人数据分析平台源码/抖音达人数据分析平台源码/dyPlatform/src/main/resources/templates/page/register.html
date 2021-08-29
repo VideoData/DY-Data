@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>小视频数据分析平台</title>
+
+    <!-- Favicons -->
+    <link href="/static/img/favicon.png" rel="icon">
+    <!--    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">-->
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/static/lib/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/mycss/register.css">
+    <style type="text/css">
+        .form-group {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .form-login {
+            width: 400px !important;
+        }
+    </style>
+</head>
+
+<body>
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<div id="login-page">
+    <div class="container">
+        <form id="form" class="form-login" style="border: 10px;">
+            <h2 class="form-login-heading">注册</h2>
+
+            <div class="form-group has-feedback" style="margin-top: 15px">
+                <!--                <label for="username">用户名</label>-->
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input name="username" id="username" class="form-control" placeholder="请输入用户名" maxlength="20"
+                           type="text">
+                </div>
+
+                <span style="color:red;display: none;" class="tips"></span>
+                <span style="display: none;" class=" glyphicon glyphicon-remove form-control-feedback"></span>
+                <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-feedback">
+                <!--                <label for="password">密码</label>-->
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input name="passwd" id="password" class="form-control" placeholder="请输入密码" maxlength="20"
+                           type="password">
+                </div>
+
+                <span style="color:red;display: none;" class="tips"></span>
+                <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-feedback">
+                <!--                <label for="passwordConfirm">确认密码</label>-->
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input id="passwordConfirm" class="form-control" placeholder="请确认密码" maxlength="20"
+                           type="password">
+                </div>
+                <span style="color:red;display: none;" class="tips"></span>
+                <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+
+
+            <div class="form-group has-feedback">
+                <!--                <label for="phoneNum">邮箱：</label>-->
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+                    <input name="email" id="phoneNum" class="form-control" placeholder="请输入邮箱" type="email">
+                </div>
+                <span style="color:red;display: none;" class="tips"></span>
+                <span style="display: none;" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-7" style="padding-right: 0px">
+                    <div class="form-group has-feedback">
+                        <!--                        <label for="idcode-btn">校验码</label>-->
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
+                            <input name="code" id="idcode-btn" class="form-control" placeholder="请输入校验码" maxlength="6"
+                                   type="text" style="padding-right: 12px">
+                        </div>
+                        <span style="color:red;display: none;" class="tips"></span>
+                        <span style="display: none;"
+                              class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                    </div>
+                </div>
+                <div class="col-xs-5 text-center" style="padding-left: 0px">
+                    <button type="button" id="loadingButton" class="btn btn-primary">获取校验码
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control btn btn-primary" id="submit"
+                       value="立&nbsp;&nbsp;即&nbsp;&nbsp;注&nbsp;&nbsp;册" type="submit">
+            </div>
+            <div style="height: 20px"></div>
+            <!--            <div class="form-group" >-->
+            <!--                <input value="重置" id="reset" class="form-control btn btn-danger" type="reset">-->
+            <!--            </div>-->
+        </form>
+    </div>
+</div>
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="/static/lib/jquery/jquery.min.js"></script>
+<script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+<!--BACKSTRETCH-->
+<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+<script type="text/javascript" src="/static/lib/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="/static/myjs/myjs/register.js"></script>
+<script>
+    $.backstretch("img/login-bg.jpg", {
+        speed: 500
+    });
+</script>
+</body>
+
+</html>
+<!--   <div class="row">
+             <div class="col-xs-7">
+                 <div class="form-group has-feedback">
+                     <label for="idcode-btn">验证码</label>
+                     <div class="input-group">
+                         <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
+                         <input id="idcode-btn" class="form-control" placeholder="请输入验证码" maxlength="4"
+                                type="text">
+                     </div>
+                     <span style="color:red;display: none;" class="tips"></span>
+                     <span style="display: none;"
+                           class="glyphicon glyphicon-remove form-control-feedback"></span>
+                     <span style="display: none;" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                 </div>
+             </div>
+             <div class="col-xs-5" style="padding-top: 30px">
+                 <div id="idcode" style="background: transparent;"></div>
+             </div>
+         </div>-->

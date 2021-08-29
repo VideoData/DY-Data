@@ -1,0 +1,97 @@
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .list-group-item {
+        font-size: 5px !important;
+    }
+
+    .author-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nick_font {
+        font-size: 8px;
+        font-weight: bold;
+        margin-top: 0px !important;
+    }
+
+    .mini-zero-padding {
+        padding: 0px !important;
+    }
+
+    .doller_font {
+        font-size: 18px;
+    }
+
+    .btn {
+        font-size: 2px !important;
+        line-height: 1 !important;
+        padding: 0;
+    }
+
+    .price_data {
+        margin-top: 0 !important;
+    }
+
+    .price_data_num {
+        margin-left: -10px;
+    }
+
+    .mini-chonghe_btn {
+        margin-left: 10px !important;
+    }
+
+    .search-inputs {
+        width: 120px !important;
+    }
+
+    .search-input-btn {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    .selecbaseul li {
+        margin-right: 10px !important;
+    }
+
+    .ys-e-multi {
+        display: none !important;
+    }
+
+    .seleadvecon-item {
+        padding: 10px !important;
+    }
+
+    .seleadve-itemaaa {
+        margin: 0px !important;
+        margin-right: 8px !important;
+    }
+
+    .sele-adve-tab {
+        width: 300px !important;
+    }
+
+    .crumb {
+        /*width: 300px !important;*/
+        padding-right: 7px !important;
+        /*top: 0px!important;*/
+        /*position: absolute;*/
+    }
+    .crumb li{
+        float: top!important;
+    }
+    .crumbs-nav{
+        position: center;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .wrapper {
+        margin-top: 80px !important;
+    }
+
+}

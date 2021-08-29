@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>找回密码</title>
+
+    <!-- Favicons -->
+    <link href="../../static/img/favicon.png" rel="icon">
+    <link href="../../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../../static/lib/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Custom styles for this template -->
+    <link href="../../static/css/style.css" rel="stylesheet">
+    <link href="../../static/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/mycss/findpasswd.css">
+
+</head>
+
+<body>
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<div id="login-page">
+    <div class="container">
+        <form class="form-horizontal form-login">
+            <h2 class="form-login-heading">密码找回</h2>
+            <div class="form-group" style="margin:20px 5px">
+                <label for="inputEmail3" class="col-sm-3 control-label mylabel">验证码</label>
+                <div class="col-sm-9 my-input-div">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group" style="margin:20px 5px">
+                <label for="inputPassword3" class="col-sm-3 control-label mylabel">新密码</label>
+                <div class="col-sm-9 my-input-div">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group" style="margin:20px 5px">
+                <label for="inputPassword3" class="col-sm-3 control-label mylabel">确认密码</label>
+                <div class="col-sm-9 my-input-div">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 20px!important;">
+                <div class="col-sm-3 col-sm-offset-3">
+                    <button type="submit" class="btn btn-default">取消</button>
+                </div>
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-default">修改</button>
+                </div>
+                <div class="col-sm-12" style="height: 20px"></div>
+            </div>
+        </form>
+
+    </div>
+</div>
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="../../static/lib/jquery/jquery.min.js"></script>
+<script src="../../static/lib/bootstrap/js/bootstrap.min.js"></script>
+<!--BACKSTRETCH-->
+<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+<script type="text/javascript" src="../../static/lib/jquery.backstretch.min.js"></script>
+<script>
+    $.backstretch("img/login-bg.jpg", {
+        speed: 500
+    });
+</script>
+</body>
+
+</html>

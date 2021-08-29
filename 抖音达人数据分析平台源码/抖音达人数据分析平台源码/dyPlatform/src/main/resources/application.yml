@@ -1,0 +1,107 @@
+my:
+  certification: false  # 是否开启身份认证拦截，即需要登录才能进入首页
+  enable-controller-Statistics: true # 是否开启controller接口的调用信息统计
+  AES:
+    KEY: aaDJL2d9DfhLZO0z  #加密相关
+    IV: 412ADDSSFA342442
+  md5:
+    salt: aaDJL2d9DfhLZO0z
+  redis:
+    default-expire-time: 1800  # 30*60 = 1800  30m
+server:
+  port: 5557
+spring:
+  mvc:
+    static-path-pattern: /static/**
+  application:
+    name: 短视频传播力分析
+  thymeleaf:
+    cache: false
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+
+  datasource:
+    url: jdbc:mysql://115.29.172.197:3306/dy?useSSL=false   #mysql相关设置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: dyanalysisroot123
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5      #初始化连接个数
+      max-active: 20       #最大连接个数
+      min-idle: 5          #最小连接个数
+      max-wait: 6000       #最大等待时间
+      pool-prepared-statements: true                        #开启缓存PSCache
+      max-pool-prepared-statement-per-connection-size: 20   #指定每个连接上PSCache的大小
+      time-between-eviction-runs-millis: 6000               #在空闲连接回收器线程运行期间休眠的时间值
+      min-evictable-idle-time-millis: 100000                # 配置一个连接在池中最小生存的时间
+      validation-query: SELECT 1 FROM DUAL                  #用来检测连接是否有效的sql
+      validation-query-timeout: 60000                       #检查sql超时时间
+      test-while-idle: true     #申请连接的时候检测
+      test-on-borrow: false     #申请连接时执行validationQuery检测连接是否有效
+      test-on-return: false     #归还连接时执行validationQuery检测连接是否有效
+      #开启StatFilter
+      stat:
+        enabled: true
+        log-slow-sql: true
+        slow-sql-millis: 1000
+      #开启Slf4jFilter
+      slf4j:
+        enabled: true
+        data-source-log-enabled: false
+        connection-log-enabled: false
+        statement-log-enabled: false
+        result-set-log-enabled: false
+      #开启WallFilter
+      wall:
+        enabled: true
+        log-violation: true
+        throw-exception: false
+        config:
+          delete-where-none-check: true
+      #开启Web监控
+      web-stat:
+        enabled: true
+      #开启Aop监控
+      aop-stat:
+        enabled: true
+      #开启监控页面
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: yhadmin123
+  # qq邮箱
+  mail:     #使用qq邮箱进行发送邮件
+    host: smtp.qq.com
+    username: 1941189375@qq.com
+    password: csowwurqctlhejje
+    port: 465 #默认25
+    protocol: smtp
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.port: 994
+    properties.mail.display.sendmail: DoubleFJ
+    properties.mail.display.sendname: Spring Boot Email
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+    default-encoding: utf-8
+    from: 1941189375@qq.com
+  redis:    # redis配置
+    database: 0   #数据库索引
+    host: 115.29.172.197
+    port: 6379
+    password: dyanalysisredis
+    jedis:
+      pool:
+        max-active: 200 #最大链接数
+        max-wait: -1  #最大阻塞等待时间
+        max-idle: 4 # 最大空闲链接
+        min-idle: 1
+    timeout: 10000 # 连接超时ms

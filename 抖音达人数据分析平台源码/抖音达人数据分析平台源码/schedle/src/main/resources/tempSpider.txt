@@ -1,0 +1,1 @@
+{"currentCategoryNum":1,"currentPlatformSource":1,"currentTalenNum":1,"pageNum":1,"pageSize":20,"totalCategoryNum":26,"totalPlatformSource":3,"totalTalentNum":379}

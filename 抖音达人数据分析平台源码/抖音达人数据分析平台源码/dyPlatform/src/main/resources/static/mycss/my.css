@@ -1,0 +1,308 @@
+.author-img {
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    top: -10px;
+    /*font-size: 15px;*/
+    box-shadow: 0 0 15px #aaaaaa;
+}
+
+.chong-author-img {
+    width: 20px;
+    height: 20px;
+    /*font-size: 15px;*/
+
+}
+
+.chong_author_img_div {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    /*top: -30px;*/
+    top: -5px;
+    border-radius: 30px;
+    box-shadow: 0 0 15px #aaaaaa;
+    position: absolute;
+}
+
+.label_span {
+    display: inline-block;
+    background-color: #dddddd;
+    border-radius: 10px;
+    padding: 0px 5px;
+    text-align: center;
+}
+
+.label_data {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.nick_font {
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold !important;
+    color: #333;
+    line-height: 22px !important;
+    cursor: pointer;
+}
+
+.num_font {
+    font-size: 16px;
+    font-family: Oswald-Regular;
+    font-weight: 400;
+    color: #666;
+    line-height: 24px;
+}
+
+.bottom_num_font {
+    margin-top: 4px;
+    font-size: 12px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #999;
+    line-height: 13px;
+}
+
+.small_btn {
+    font-size: 2px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    border-width: 0px !important;
+    margin-top: 10px !important;
+}
+
+.doller_font {
+    font-family: Owa;
+    font-weight: 500;
+    color: #f45778;
+    line-height: 1.4285;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.middle {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.zero_padding {
+    padding: 0;
+}
+
+.all_default_font {
+    font-size: 14px;
+}
+
+.default_font {
+    font-size: 16px;
+    font-weight: 500;
+    color: #f45778;
+    cursor: pointer;
+}
+
+.default_active_font {
+    font-size: 16px;
+    font-weight: 700;
+    color: #555;
+}
+
+/*重合度面板*/
+.chonghe_panel {
+    position: absolute;
+    right: 0px;
+    top: 250px;
+    transition: right 0.3s ease-in-out;
+}
+
+/*背包计算结果展示*/
+.result_table {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.result_table span {
+    color: black;
+    font-weight: bold;
+}
+
+.result_table td {
+    padding-bottom: 8px;
+    /*padding-right: px;*/
+
+}
+
+.result_table tr td:nth-child(1) {
+    padding-right: 10px;
+}
+
+#cal_result {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/*候选列表导航*/
+.mynav {
+    display: inline-block;
+    color: black;
+    background-color: #E0E1E7;
+}
+
+.mynav div {
+    margin: 0px;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 2px;
+    padding-top: 5px;
+
+    background-color: #E0E1E7;
+    border-left: 1px solid #E0E1E7;
+    border-top: 1px solid #E0E1E7 !important;
+}
+
+.mynav div:hover {
+    cursor: pointer;
+    background-color: #EAEBF1;
+}
+
+.mynav div:nth-last-child(1) {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-right: 1px solid #E0E1E7 !important;
+    /*border-right-width: 0px !important;*/
+}
+
+.mynav div:nth-child(1) {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    /*border-left-width: 0px !important;*/
+    border-left: 1px solid #E0E1E7 !important;
+}
+
+.mynavAcitve {
+    background-color: #fff !important;
+    border-bottom-width: 0px !important;
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+@font-face {
+    font-family: PingFang;
+    src: url(../ttf/PingFangRegular.ttf)
+}
+
+/*背包计算历史*/
+#result_menu_item li:hover {
+    cursor: pointer;
+    background-color: #EAEBF1;
+}
+
+#result_menu_item li {
+    text-align: center;
+    margin-top: 8px;
+    /*border-top: 1px solid #E0E1E7;*/
+}
+
+#result_menu_item {
+    /*width: 50px !important;*/
+    min-width: 120px !important;
+}
+
+.mytable_index td {
+    padding: 0px 0px;
+    height: 25px;
+    /*align-content: center;*/
+    text-align: center !important;
+    /*    padding-left: 10px !important;
+        padding-right: 10px !important;*/
+}
+
+.mytable td {
+    padding: 0px 0px;
+    height: 25px;
+    /*align-content: center;*/
+    text-align: center !important;
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+}
+
+.mytable .doller_font {
+    font-size: 18px !important;
+}
+
+.mytable .xt_font {
+    font-size: 12 Rpx !important;
+}
+
+/*显示全局标签样式*/
+.overall_label {
+    background-color: #E0E1E7;
+    padding-right: 4px;
+    padding-left: 4px;
+    border-radius: 3px;
+}
+
+.my_item_btn {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+
+.my_item_btn_active {
+    background-color: #f8f8f8 !important;
+}
+
+
+.price_label {
+    background-color: #FFBD35;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 0px #888888;
+    padding: 0px 5px;
+    color: white !important;
+    font-weight: bolder;
+}
+
+.title_label {
+    color: #797979 !important;
+    background-color: #3399cc2e;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    display: inline-block;
+    /*padding: 0 5px 10px 5px;*/
+    padding-right: 10px;
+    box-shadow: 0 0 5px 0px #888888;
+    /*text-align: center;*/
+    line-height: 30px;
+    font-weight: normal;
+}
+
+.open a:hover {
+    opacity: 0.5;
+}
+
+.open a {
+    opacity: 0.5;
+}
+
+.xt_tip {
+    position: relative;
+}
+
+.xt_tip:hover:after {
+    position: absolute;
+    left: 30px;
+    top: -5px;
+    padding: 5px;
+    background-color: #e2e2e2;
+    border-radius: 8px;
+    color: black;
+    /*这里显示的内容为表格中自定义的labelTooltip属性对应的值*/
+    content: "星图";
+    z-index: 2;
+    width: 40px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<div class="outer" style="background-color: red;margin-left: 20px;position: relative">
+    <div class="inner" style="background-color:black;width: 20px;height: 20px;position: absolute"></div>
+</div>
+<br>
+<div></div>
+<script src="../static/lib/jquery/jquery.min.js"></script>
+<script>
+    let startX = -1
+    let startY = -1
+    let endX = -1
+    let endY = -1
+    //定义一个变量判断是否执行移动函数
+    var mouseDown = false;
+    $(document).on('mousedown', ".inner", function (e) {
+        e.preventDefault()
+        startX = e.clientX
+        startY = e.clientY
+        console.log("鼠标按下")
+        console.log(startX, startY)
+        //按下时为ture,松开时为false，以判断是否执行执行mouveDiv
+        mouseDown = true;
+    })
+    $(document).on('mousemove', ".inner", function (e) {
+            if (mouseDown) {
+                var mouseX = e.originalEvent.x || e.originalEvent.layerX || 0;
+                var mouseY = e.originalEvent.y || e.originalEvent.layerY || 0;
+                console.log("鼠标", mouseX, mouseY)
+                var parentX = $('.outer').offset().top;
+                var parentY = $('.outer').offset().left;
+                console.log("父元素", parentX, parentY)
+                var width = $(this).width();
+                var height = $(this).height();
+
+                var thisX = $(this).offset().top;
+                var thisY = $(this).offset().left;
+                console.log("自己元素", thisX, thisY)
+
+                var offsetX = e.pageX - $(".outer").offset().left;
+                var offsetY = e.pageY - $(".outer").offset().top;
+                console.log("offsetX元素", offsetX, offsetY)
+                this.style.left = (offsetX - width / 2) + "px";
+                this.style.top = (offsetY - height / 2) + "px";
+            }
+        }
+    )
+    $(document).on('mouseup', ".inner", function (e) {
+        console.log("鼠标放開")
+        mouseDown = false;
+    })
+</script>
+
+</body>
+</html>

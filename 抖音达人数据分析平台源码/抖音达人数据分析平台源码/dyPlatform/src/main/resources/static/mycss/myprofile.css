@@ -1,0 +1,8 @@
+.nick_font {
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold !important;
+    color: #333;
+    line-height: 22px!important;
+    cursor: pointer;
+}

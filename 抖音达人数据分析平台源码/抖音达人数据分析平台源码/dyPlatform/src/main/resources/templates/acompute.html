@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Dashio - Bootstrap Admin Template</title>
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+<!--    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="lib/gritter/css/jquery.gritter.css"/>
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+    <script src="lib/chart-master/Chart.js"></script>
+
+    <!--jqeury ui-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+
+    <link rel="stylesheet" type="text/css" href="mycss/my.css">
+
+</head>
+
+<body>
+<section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+    <!--header start-->
+    <header class="header black-bg">
+        <div class="sidebar-toggle-box">
+            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+        </div>
+        <!--logo start-->
+        <a href="page/index.html" class="logo"><b><span>小视频传播力</span></b></a>
+        <!--logo end-->
+        <div class="nav notify-row" id="top_menu">
+            <!--  notification start -->
+            <ul class="nav top-menu">
+                <!-- settings start -->
+                <!--              <li class="dropdown">
+                                  <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                                      <i class="fa fa-tasks"></i>
+                                      <span class="badge bg-theme">4</span>
+                                  </a>
+                                  <ul class="dropdown-menu extended tasks-bar">
+                                      <div class="notify-arrow notify-arrow-green"></div>
+                                      <li>
+                                          <p class="green">You have 4 pending tasks</p>
+                                      </li>
+                                      <li>
+                                          <a href="index.html#">
+                                              <div class="task-info">
+                                                  <div class="desc">Dashio Admin Panel</div>
+                                                  <div class="percent">40%</div>
+                                              </div>
+                                              <div class="progress progress-striped">
+                                                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                                       aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                                      <span class="sr-only">40% Complete (success)</span>
+                                                  </div>
+                                              </div>
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a href="index.html#">
+                                              <div class="task-info">
+                                                  <div class="desc">Database Update</div>
+                                                  <div class="percent">60%</div>
+                                              </div>
+                                              <div class="progress progress-striped">
+                                                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                                       aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                      <span class="sr-only">60% Complete (warning)</span>
+                                                  </div>
+                                              </div>
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a href="index.html#">
+                                              <div class="task-info">
+                                                  <div class="desc">Product Development</div>
+                                                  <div class="percent">80%</div>
+                                              </div>
+                                              <div class="progress progress-striped">
+                                                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80"
+                                                       aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                      <span class="sr-only">80% Complete</span>
+                                                  </div>
+                                              </div>
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a href="index.html#">
+                                              <div class="task-info">
+                                                  <div class="desc">Payments Sent</div>
+                                                  <div class="percent">70%</div>
+                                              </div>
+                                              <div class="progress progress-striped">
+                                                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
+                                                       aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                                      <span class="sr-only">70% Complete (Important)</span>
+                                                  </div>
+                                              </div>
+                                          </a>
+                                      </li>
+                                      <li class="external">
+                                          <a href="#">See All Tasks</a>
+                                      </li>
+                                  </ul>
+                              </li>
+                              &lt;!&ndash; settings end &ndash;&gt;
+                              &lt;!&ndash; inbox dropdown start&ndash;&gt;
+                              <li id="header_inbox_bar" class="dropdown">
+                                  <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                                      <i class="fa fa-envelope-o"></i>
+                                      <span class="badge bg-theme">5</span>
+                                  </a>
+                                  <ul class="dropdown-menu extended inbox">
+                                      <div class="notify-arrow notify-arrow-green"></div>
+                                      <li>
+                                          <p class="green">You have 5 new messages</p>
+                                      </li>
+                                      <li>
+                                          <a href="index.html#">
+                                              <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
+                                              <span class="subject">
+                                <span class="from">Zac Snider</span>
+                                <span class="time">Just now</span>
+                                </span>
+                                              <span class="message">
+                                Hi mate, how is everything?
+                                </span>
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a href="index.html#">
+                                              <span class="photo"><img alt="avatar" src="img/ui-divya.jpg"></span>
+                                              <span class="subject">
+                                <span class="from">Divya Manian</span>
+                                <span class="time">40 mins.</span>
+                                </span>
+                                              <span class="message">
+                                Hi, I need your help with this.
+                                </span>
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a href="index.html#">
+                                              <span class="photo"><img alt="avatar" src="img/ui-danro.jpg"></span>
+                                              <span class="subject">
+                                <span class="from">Dan Rogers</span>
+                                <span class="time">2 hrs.</span>
+                                </span>
+                                              <span class="message">
+                                Love your new Dashboard.
+                                </span>
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a href="index.html#">
+                                              <span class="photo"><img alt="avatar" src="img/ui-sherman.jpg"></span>
+                                              <span class="subject">
+                                <span class="from">Dj Sherman</span>
+                                <span class="time">4 hrs.</span>
+                                </span>
+                                              <span class="message">
+                                Please, answer asap.
+                                </span>
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a href="index.html#">See all messages</a>
+                                      </li>
+                                  </ul>
+                              </li>-->
+                <!-- inbox dropdown end -->
+                <!-- notification dropdown start-->
+                <li id="header_notification_bar" class="dropdown" style="margin-left: 500px;">
+                    <a class="dropdown-toggle" href="#">
+                        <i class="fa fa-bell-o">候选达人</i>
+                        <span class="badge bg-warning">7</span>
+                    </a>
+
+                </li>
+                <!-- notification dropdown end -->
+            </ul>
+            <!--  notification end -->
+        </div>
+        <div class="top-menu">
+            <ul class="nav pull-right top-menu">
+                <li><a class="logout" href="page/login.html">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+        <div id="sidebar" class="nav-collapse ">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+                <h5 class="centered">Sam Soffes</h5>
+                <li class="mt">
+                    <a class="active" href="page/index.html">
+                        <i class="fa fa-dashboard"></i>
+                        <span>列表</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="asecond.html">
+                        <i class="fa fa-map-marker"></i>
+                        <span>详细 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="acompute.html">
+                        <i class="fa fa-map-marker"></i>
+                        <span>计算 </span>
+                    </a>
+                </li>
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="container-fluid">
+                <!--输入框-->
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-md-offset-2">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">预算</span>
+                            <input type="text" class="form-control" placeholder="1000 ￥" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-addon" >数量限制</span>
+                            <input type="text" class="form-control" placeholder="10 人" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <button type="button" class="btn btn-primary btn-sm">计算</button>
+                    </div>
+                </div>
+                <!--中间-->
+                <div class="row">
+                    <div id="accordion">
+                        <h3>选定达人&nbsp;&nbsp;数量：3 人</h3>
+                        <div>
+                            <div class="list-group">
+                                <button type="button" class="list-group-item" style="position: relative;margin: 0!important;padding: 0!important;" >
+                                    <div class="left" >
+                                        <div style="display: inline-block;width: 15px;height: 15px;background-color:white;border:3px solid #aaaaaa;margin-right:10px;margin-bottom: 10px">
+
+                                        </div>
+                                        <div style="display: inline-block; margin-bottom: 10px;">
+                                            <img class="author-img"
+                                                 alt="达人头像"
+                                                 src="https://p1-dy.byteimg.com/aweme/1080x1080/1cafa00022c7918c31eb5.jpeg"
+                                            />
+                                        </div>
+                                        <div class="base_info" style="display: inline-block;margin-left: 10px">
+                                            <span>精致辣妈蓉儿</span>
+                                            <br/>
+                                            <br/>
+                                            <div class="label_span">运动健身</div>
+                                            <div class="label_span">生活</div>
+                                            <div class="label_span">美妆</div>
+
+                                            广东省-广州市
+                                        </div>
+                                    </div>
+                                    <div class="right" style="position: absolute;right: 0px;top: 0px;">
+                                        <!--            中间数据标签-->
+                                        <div style="display: inline-block;width: 500px;margin-top: 20px;margin-right: 20px;">
+                                            <div>
+                                                <div class="label_data">
+                                                    平台
+                                                </div>
+                                                <div class="label_data">
+                                                    587w 粉丝数
+                                                </div>
+                                                <div class="label_data">
+                                                    271.90  预期CPM
+                                                </div>
+                                                <div class="label_data">
+                                                    33w  预期揖放量
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="display: inline-block;margin-right: 20px">
+                                            <div>￥90000</div>
+                                            <div>￥90000</div>
+                                        </div>
+                                        <div style="display: inline-block">
+                                            <!--                <button style="display: inline-block">sd</button>-->
+                                            <div type="button" class="btn btn-primary btn-sm" style="">添加</div>
+                                        </div>
+
+                                    </div>
+                                </button>
+                                <button type="button" class="list-group-item" style="position: relative;margin: 0!important;padding: 0!important;" >
+                                    <div class="left" >
+                                        <div style="display: inline-block;width: 15px;height: 15px;background-color:white;border:3px solid #aaaaaa;margin-right:10px;margin-bottom: 10px">
+
+                                        </div>
+                                        <div style="display: inline-block; margin-bottom: 10px;">
+                                            <img class="author-img"
+                                                 alt="达人头像"
+                                                 src="https://p1-dy.byteimg.com/aweme/1080x1080/1cafa00022c7918c31eb5.jpeg"
+                                            />
+                                        </div>
+                                        <div class="base_info" style="display: inline-block;margin-left: 10px">
+                                            <span>精致辣妈蓉儿</span>
+                                            <br/>
+                                            <br/>
+                                            <div class="label_span">运动健身</div>
+                                            <div class="label_span">生活</div>
+                                            <div class="label_span">美妆</div>
+
+                                            广东省-广州市
+                                        </div>
+                                    </div>
+                                    <div class="right" style="position: absolute;right: 0px;top: 0px;">
+                                        <!--            中间数据标签-->
+                                        <div style="display: inline-block;width: 500px;margin-top: 20px;margin-right: 20px;">
+                                            <div>
+                                                <div class="label_data">
+                                                    平台
+                                                </div>
+                                                <div class="label_data">
+                                                    587w 粉丝数
+                                                </div>
+                                                <div class="label_data">
+                                                    271.90  预期CPM
+                                                </div>
+                                                <div class="label_data">
+                                                    33w  预期揖放量
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="display: inline-block;margin-right: 20px">
+                                            <div>￥90000</div>
+                                            <div>￥90000</div>
+                                        </div>
+                                        <div style="display: inline-block">
+                                            <!--                <button style="display: inline-block">sd</button>-->
+                                            <div type="button" class="btn btn-primary btn-sm" style="">添加</div>
+                                        </div>
+
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <h3>候选达人 &nbsp;&nbsp;数量：3 人 </h3>
+                        <div>
+                            <button type="button" class="list-group-item" style="position: relative;margin: 0!important;padding: 0!important;" >
+                                <div class="left" >
+                                    <div style="display: inline-block;width: 15px;height: 15px;background-color:white;border:3px solid #aaaaaa;margin-right:10px;margin-bottom: 10px">
+
+                                    </div>
+                                    <div style="display: inline-block; margin-bottom: 10px;">
+                                        <img class="author-img"
+                                             alt="达人头像"
+                                             src="https://p1-dy.byteimg.com/aweme/1080x1080/1cafa00022c7918c31eb5.jpeg"
+                                        />
+                                    </div>
+                                    <div class="base_info" style="display: inline-block;margin-left: 10px">
+                                        <span>精致辣妈蓉儿</span>
+                                        <br/>
+                                        <br/>
+                                        <div class="label_span">运动健身</div>
+                                        <div class="label_span">生活</div>
+                                        <div class="label_span">美妆</div>
+
+                                        广东省-广州市
+                                    </div>
+                                </div>
+                                <div class="right" style="position: absolute;right: 0px;top: 0px;">
+                                    <!--            中间数据标签-->
+                                    <div style="display: inline-block;width: 500px;margin-top: 20px;margin-right: 20px;">
+                                        <div>
+                                            <div class="label_data">
+                                                平台
+                                            </div>
+                                            <div class="label_data">
+                                                587w 粉丝数
+                                            </div>
+                                            <div class="label_data">
+                                                271.90  预期CPM
+                                            </div>
+                                            <div class="label_data">
+                                                33w  预期揖放量
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="display: inline-block;margin-right: 20px">
+                                        <div>￥90000</div>
+                                        <div>￥90000</div>
+                                    </div>
+                                    <div style="display: inline-block">
+                                        <!--                <button style="display: inline-block">sd</button>-->
+                                        <div type="button" class="btn btn-primary btn-sm" style="">添加</div>
+                                    </div>
+
+                                </div>
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+    <!--footer end-->
+</section>
+<!-- js placed at the end of the document so the pages load faster -->
+
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+<script src="lib/jquery.scrollTo.min.js"></script>
+<script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+<script src="lib/jquery.sparkline.js"></script>
+<script src="lib/sparkline-chart.js"></script>
+<script src="lib/highcharts.src.js"></script>
+<!--折叠面板-->
+<script>
+    $(function() {
+        $( "#accordion" ).accordion({
+            collapsible: true
+        });
+    });
+</script>
+
+
+</body>
+
+</html>

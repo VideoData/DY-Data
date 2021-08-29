@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>结算</title>
+
+    <!-- Favicons -->
+    <link href="/static/img/favicon.png" rel="icon">
+    <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/static/lib/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/style-responsive.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/static/mycss/my.css">
+
+</head>
+
+<body class="all_default_font" style="min-width: 1200px">
+<section id="container">
+
+    <div th:replace="component/component::header(0)"></div>
+    <div th:replace="component/component::aside(3)"></div>
+    <section id="main-content">
+        <section class="wrapper">
+            <!-- page start-->
+            <div class="row mt" style="margin-left: 5px">
+                <div class="col-sm-3" style="padding-right: 0px!important;padding-left: 0px!important;">
+                    <section class="panel">
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="active" onclick="swicthCalcPanel(this,1)"><a
+                                    href="javascipt:void(0)">自动选择</a></li>
+                            <li role="presentation" onclick="swicthCalcPanel(this,2)"><a
+                                    href="javascipt:void(0)">全局选择</a></li>
+                        </ul>
+                        <div class="panel-body" id="calc_panel_1">
+                            <div class="row">
+                                <div class=" col-md-10 col-md-offset-1">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">长度</span>
+                                        <select class="form-control" id="video_length">
+                                            <option>1-20s视频</option>
+                                            <option>21-60s视频</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 4px;display: none">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">数量</span>
+                                        <input type="number" class="form-control" placeholder="10 人" value="1" step="1"
+                                               min="1"
+                                               aria-describedby="basic-addon1" id="max_talent_num_input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 4px;">
+                                <div class=" col-md-10 col-md-offset-1">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1" style="padding-right: 0px">预算
+                                            <i data-toggle="popover" id="help_pre_price" class="fa fa-question-circle"
+                                               aria-hidden="true"
+                                               style="font-size: 14px"></i>
+                                        </span>
+                                        <input id="pre_money_input" type="number" class="form-control"
+                                               aria-describedby="basic-addon1" min="1" value="1">
+                                        <span class="input-group-addon" id="basic-addon1"
+                                              style="padding-right: 0px!important;padding-left: 0px!important;background-color:#fff!important;">000 ￥</span>
+                                        <!--                                        <span class="">%</span>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-top: 4px;">
+                                <div class="col-lg-3 col-md-3 col-md-offset-1" style="position:relative;">
+                                    <button type="button" id="calculate_btn" class="btn btn-primary btn-sm ">
+                                        自动选择<i class="fa fa-question-circle show_calculate_help"
+                                               aria-hidden="true"
+                                               style="margin-left: 10px;font-size: 14px"></i>
+                                    </button>
+                                    <div style="width: 270px;box-shadow: 0 0 15px #666666;z-index: 5;background-color:#fff;padding: 10px;border-radius: 10px;display: none;position:absolute;">
+                                        根据达人传播力和报价，以及输入人数限制和预算，使用背包算法得出最优组合。
+                                        <br/>
+                                        算法自动选出的五角星将标记为灰色
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-md-offset-3">
+                                    <button type="button" id="pay_btn" class="btn btn-primary btn-sm">
+                                        结算
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body" id="calc_panel_2" style="display: none;">
+
+                            <div class="row">
+                                <div class=" col-md-10 col-md-offset-1">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">长度</span>
+                                        <select class="form-control" id="overall_video_length">
+                                            <option>1-20s视频</option>
+                                            <option>21-60s视频</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 4px;">
+                                <div class=" col-md-10 col-md-offset-1">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">分类</span>
+                                        <select class="form-control" id="talent_type">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 4px;">
+                                <div class=" col-md-10 col-md-offset-1">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1" style="padding-right: 0px">预算
+                                            <i data-toggle="popover" id="help_pre_price" class="fa fa-question-circle"
+                                               aria-hidden="true"
+                                               style="font-size: 14px"></i>
+                                        </span>
+                                        <input id="overall_pre_money_input" type="number" class="form-control"
+                                               aria-describedby="basic-addon1" min="1" value="1">
+                                        <span class="input-group-addon" id="basic-addon1"
+                                              style="padding-right: 0px!important;padding-left: 0px!important;background-color:#fff!important;">000 ￥</span>
+                                        <!--                                        <span class="">%</span>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-top: 4px;">
+                                <div class="col-lg-3 col-md-3 col-md-offset-1" style="position:relative;">
+                                    <button type="button" id="calculate_overall_btn" class="btn btn-primary btn-sm ">
+                                        自动选择<i class="fa fa-question-circle show_calculate_help"
+                                               aria-hidden="true"
+                                               style="margin-left: 10px;font-size: 14px"></i>
+                                    </button>
+                                    <div style="width: 270px;box-shadow: 0 0 15px #666666;z-index: 5;background-color:#fff;padding: 10px;border-radius: 10px;display: none;position:absolute;">
+                                        根据达人传播力和报价，以及输入人数限制和预算，使用背包算法得出最优组合。
+                                        <br/>
+                                        算法自动选出的五角星将标记为灰色
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-md-offset-3">
+                                    <button type="button" id="pay_btn" class="btn btn-primary btn-sm">
+                                        结算
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="panel">
+                        <ul class="nav nav-tabs" style="background-color: #badaea;">
+                            <li role="presentation" class="active" id="cal_result_select"><a href="#">计算结果</a></li>
+                            <li role="presentation" class="dropdown pull-right">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    历史 <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" id="result_menu_item">
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="panel-body" id="cal_result" style="padding:0px; ">
+                            <div id="show_place_holder" style="margin-top: 10px">
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;您还没有开始计算，请在上方输入预算开始吧！</p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp; 根据达人传播力和报价，以及输入人数限制和预算，使用背包算法得出最优组合。
+                                </p>
+                            </div>
+                            <div id="show_normal_result" style="margin-top:5px;display: none;box-shadow: 0px 3px 2px 0px #888888">
+                                <span class="title_label">
+                                    预期播放量最优：
+                                </span>
+                                <button type="button" id="show_talent_btn_play" class="btn btn-xs"
+                                        style="float: right;margin-right: 5px;">
+                                    达人列表
+                                    <span class="glyphicon glyphicon-align-justify"></span>
+                                </button>
+                                <table class="result_table" width="100%" style="margin-top: 10px;">
+                                    <tr>
+                                        <td>长度：<span id="result_type"></span></td>
+                                        <td> 预算：<span id="result_preMoney"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>选定数量：<span id="result_talent_num"></span></td>
+                                        <td>总支付：<span id="result_pay"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>播放量：<span id="result_perplay" class="price_label"></span></td>
+                                        <td>粉丝数：<span id="real_fan"></span></td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div id="show_optimization_result"
+                                 style="display: none;margin-top: 30px;box-shadow: 0px 3px 2px 0px #888888">
+                                <!--                                <div style="height: 3px;width:100%;background-color: #ee1e2d;"></div>-->
+                                <span class="title_label">
+                                        效益比最优：
+                                    </span>
+
+                                <button type="button" id="optimization_show_talent_btn"
+                                        class="btn btn-xs"
+                                        style="float: right;margin-right: 5px;">
+                                    达人列表
+                                    <span class="glyphicon glyphicon-align-justify"></span>
+                                </button>
+                                <table class="result_table" width="100%" style="margin-top: 10px">
+                                    <tr>
+                                        <td>选定数量：<span id="optimization_result_talent_num"></span></td>
+                                        <td>总支付：<span id="optimization_result_pay" class="price_label"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>播放量：<span id="optimization_result_perplay"></span></td>
+                                        <td>粉丝数：<span id="optimization_real_fan"></span></td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!--右边-->
+                <div>
+                    <div id="main_right" th:fragment="main_right" class="col-sm-9">
+                        <section id="lastCandidatePanels" th:fragment="lastCandidatePanels" class="panel">
+                            <header class="panel-heading wht-bg">
+                                <button type="button" class="btn btn-primary  btn-xs"
+                                        style="display: inline-block;margin-right: 10px" id="zhe1">折叠
+                                </button>
+                                <span class="gen-case active default_active_font"
+                                      style="display: inline-block;font-size: 16px">
+                                总计 <span style="color:#f45778;font-weight: bolder;font-size: 19px"
+                                         id="lastcandidate_total_price_span">0</span> ￥
+                            </span>
+                                <form action="#" class="pull-right mail-src-position" style="margin-right: 10px">
+                                    <div class="input-append">
+                                        <input type="text" class="form-control " placeholder="搜索达人">
+                                    </div>
+                                </form>
+                            </header>
+                            <div id="panel1" class="panel-body minimal">
+                                <div class="mail-option">
+
+                                    <div class="chk-all">
+                                        <div class="pull-left mail-checkbox select_all">
+                                            <input type="checkbox" class="">
+                                        </div>
+                                        全部
+                                    </div>
+                                    <div class="btn-group" id="remove_all_choosed_candidate_btn">
+                                        <a href="#" class="btn  ">
+                                            移除
+                                        </a>
+                                    </div>
+                          <!--          <div class="btn-group hidden-phone">
+                                        <a data-toggle="dropdown" href="#" class="btn mini blue">
+                                            More
+                                            <i class="fa fa-angle-down "></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                                            <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                        </ul>
+                                    </div>-->
+                                    <div class="btn-group">
+                                        <a data-original-title="Refresh" data-placement="top" data-toggle="dropdown"
+                                           href="#" class="btn mini tooltips">
+                                            <i class=" fa fa-refresh"></i>
+                                        </a>
+                                    </div>
+                                    <ul class="unstyled inbox-pagination">
+                                        <li><span id="lastCandidateNumSpan">共 0 位达人</span></li>
+                                        <li>
+                                            <a class="np-btn" id="lastCandidate_lastPage_btn" href="#"><i
+                                                    class="fa fa-angle-left  pagination-left"></i></a>
+                                        </li>
+                                        <li>
+                                            <a class="np-btn" id="lastCandidate_nextPage_btn" href="#"><i
+                                                    class="fa fa-angle-right pagination-right"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="table-inbox-wrap ">
+                                    <div class="list-group" th:each="lastCandidate:${lastCandidatePage.dataList}">
+
+                                        <button type="button" class="list-group-item my_item_btn"
+                                                th:data="${lastCandidate.id}"
+                                                style="position: relative;border-width: 0px!important;">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="col-md-1 zero_padding"
+                                                         style="margin-top: 39px;position: relative">
+                                                        <input th:data="${lastCandidate.id}"
+                                                               type="checkbox"
+                                                               class="selected-mail-checkbox select_checkbox_choosed_candidate_item"
+                                                               style="position: absolute;left: 5px">
+
+                                                    </div>
+                                                    <div class="col-md-1 zero_padding inbox_started_div"
+                                                         data-toggle="popover"
+                                                         data-placement="bottom"
+                                                         style="margin-top: 39px">
+                                                        <i class="fa fa-star inbox-started"
+                                                           th:data="${lastCandidate.id}"
+                                                           style="margin-right:10px;margin-bottom: 10px;color: #555;"></i>
+                                                    </div>
+                                                    <div class="col-md-4 zero_padding" style="margin-top: 25px;">
+                                                        <img class="author-img"
+                                                             alt="达人头像"
+                                                             th:src="@{${lastCandidate.avatarLink}}"
+                                                        />
+                                                    </div>
+                                                    <div class="col-md-6 zero_padding">
+                                                        <div class="row">
+                                                            <div class="nick_font" style="margin-top: 10px"
+                                                                 th:text="${lastCandidate.nickName}">精致辣妈蓉儿
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="height: 20px;"></div>
+                                                        <div class="label_span" th:each="type:${lastCandidate.types}"
+                                                             th:text="${type.typeName}">运动健身
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8 "
+                                                     style="margin-top: 15px;padding-left: 0px!important;padding-right: 0px!important;">
+                                                    <!--            中间数据标签-->
+                                                    <div class="col-md-7" style="padding: 0px!important;">
+                                                        <table class="mytable" style="table-layout: fixed;width: 100%">
+                                                            <tr>
+                                                                <td>粉丝数</td>
+                                                                <td>预期播放量</td>
+                                                                <td>预期cpm</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                    <span class="doller_font"
+                                          th:text="${lastCandidate.realFansCount>=10000?(lastCandidate.realFansCount/10000+'W'):lastCandidate.realFansCount}">587W</span>
+                                                                    <span th:text=" ${lastCandidate.fansCount>=10000?(lastCandidate.fansCount/10000+'W'):lastCandidate.fansCount}">587W</span>
+                                                                </td>
+                                                                <td>
+                                    <span class="doller_font"
+                                          th:text="${lastCandidate.prePlayNum>=10000?(#numbers.formatDecimal(lastCandidate.prePlayNum/10000.0,1,2)+'W'):lastCandidate.prePlayNum}">587W</span>
+                                                                    <span th:text="${lastCandidate.xtPrePlayNum>=10000?(lastCandidate.xtPrePlayNum/10000+'W'):lastCandidate.xtPrePlayNum}">271.90</span>
+
+                                                                </td>
+                                                                <td>
+                                    <span class="doller_font"
+                                          th:text="${#numbers.formatDecimal(lastCandidate.tempCpm,1,2)}">587W</span>
+                                                                    <span th:text="${#numbers.formatDecimal(lastCandidate.xtCpm,1,0)}">587W</span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-md-5 zero_padding" style="margin-top: 10px">
+                                                        <div class="col-md-6 col-md-offset-1 zero_padding">
+                                                            <span class="doller_font" style="font-size: 19px!important;"
+                                                                  th:text="'￥'+${lastCandidate.showMainPrice>=10000?(#numbers.formatDecimal(lastCandidate.showMainPrice/10000,1,2)+'W'):lastCandidate.showMainPrice}">￥90000</span>
+                                                            <i class="fa fa-angle-double-right fans_show"
+                                                               aria-hidden="true"
+                                                               style="font-size: 18px">
+                                                            </i>
+                                                            <div style="display:none;width:160px;position: absolute;left: 0px;top:40px;z-index: 1;background-color:#fff;box-shadow: 0 0 15px #aaa;padding: 5px;border-radius: 12px;text-align: center">
+                                                                <div th:each="price:${lastCandidate.priceEntities}">
+                                                <span class="num_font"
+                                                      th:text="${price.timeRange+'-'+price.type+':'+price.price}"
+                                                      style="font-size: 5px!important;">271.90</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-5 zero_padding">
+                                                            <div class="col-md-6 zero_padding" style="margin-top: 5px">
+                                                                <!--                <button style="display: inline-block">sd</button>-->
+                                                                <div type="button"
+                                                                     th:data="${lastCandidate.id}"
+                                                                     class="btn btn-primary btn-xs chonghe_btn"
+                                                                     style="margin: 0px;">
+                                                                    重合度
+                                                                </div>
+                                                                <div style="display: none"
+                                                                     th:text="${lastCandidate.avatarLink}"></div>
+                                                            </div>
+                                                            <div class="col-md-6 zero_padding" style="margin-top: 5px;padding-left: 5px">
+                                                                <div type="button"
+                                                                     class="btn btn-danger btn-xs remove_choose_btn"
+                                                                     th:data="${lastCandidate.id}"
+                                                                     style="margin: 0px;">
+                                                                    移除
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!--候选-->
+                        <section id="candidatePanel" th:fragment="candidatePanel" class="panel">
+                            <header class="panel-heading wht-bg">
+                                <button id="zhe2" type="button" class="btn btn-primary btn-xs"
+                                        style="display: inline-block;margin-right: 14px">折叠
+                                </button>
+                                <div id="mynavs" class="mynav">
+                                    <!--<div class="mynavAcitve">34</div>-->
+                                </div>
+                                <span class="gen-case active default_active_font"
+                                      style="display: inline-block;font-size: 16px">
+                                总计 <span style="color:#f45778;font-weight: bolder;font-size: 19px"
+                                         id="candidate_total_price_span">0</span> ￥
+                            </span>
+                            </header>
+                            <div id="panel2" class="panel-body minimal">
+                                <div class="mail-option">
+
+                                    <div class="chk-all">
+                                        <div class="pull-left mail-checkbox select_all">
+                                            <input type="checkbox" class="">
+                                        </div>
+                                        全部
+                                    </div>
+                                    <div class="btn-group" id="choose_all_candidate_btn">
+                                        <a href="#" class="btn">
+                                            选定
+                                        </a>
+                                    </div>
+                                    <div class="btn-group" id="remove_all_candidate_btn">
+                                        <a href="#" class="btn  ">
+                                            移除
+                                        </a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a data-original-title="Refresh" data-placement="top" data-toggle="dropdown"
+                                           href="#" class="btn mini tooltips">
+                                            <i class=" fa fa-refresh"></i>
+                                        </a>
+                                    </div>
+                                    <ul class="unstyled inbox-pagination">
+                                        <li><span id="candidateNumSpan">共 0 位达人</span></li>
+                                        <li>
+                                            <a id="candidate_lastPage_btn" class="np-btn" href="#"><i
+                                                    class="fa fa-angle-left  pagination-left"></i></a>
+                                        </li>
+                                        <li>
+                                            <a id="candidate_nextPage_btn" class="np-btn" href="#"><i
+                                                    class="fa fa-angle-right pagination-right"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="table-inbox-wrap ">
+                                    <div class="list-group" th:each="candidate:${candidatePage.dataList}">
+
+                                        <button type="button" class="list-group-item my_item_btn"
+                                                th:data="${candidate.id}"
+                                                style="position: relative;border-width: 0px!important;">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="col-md-2"
+                                                         style="margin-top: 39px;position: relative">
+                                                        <input th:data="${candidate.id}" type="checkbox"
+                                                               class="selected-mail-checkbox select_checkbox_candidate_item"
+                                                               style="position: absolute;left: 5px">
+
+                                                    </div>
+                                                    <div class="col-md-4 zero_padding" style="margin-top: 25px;">
+                                                        <img class="author-img"
+                                                             alt="达人头像"
+                                                             th:src="@{${candidate.avatarLink}}"
+                                                        />
+                                                    </div>
+                                                    <div class="col-md-6 zero_padding">
+                                                        <div class="row">
+                                                            <div class="nick_font" style="margin-top: 10px"
+                                                                 th:text="${candidate.nickName}">精致辣妈蓉儿
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="height: 20px;"></div>
+                                                        <div class="label_span" th:each="type:${candidate.types}"
+                                                             th:text="${type.typeName}">运动健身
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8 "
+                                                     style="margin-top: 15px;padding-left: 0px!important;">
+                                                    <!--            中间数据标签-->
+                                                    <div class="col-md-7" style="padding: 0px!important;">
+                                                        <table class="mytable" style="table-layout: fixed;width: 100%">
+                                                            <tr>
+                                                                <td>粉丝数</td>
+                                                                <td>预期播放量</td>
+                                                                <td>预期cpm</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                    <span class="doller_font"
+                                          th:text="${candidate.realFansCount>=10000?(candidate.realFansCount/10000+'W'):candidate.realFansCount}">587W</span>
+                                                                    <span class="xt_font" th:text=" ${candidate.fansCount>=10000?(candidate.fansCount/10000+'W'):candidate.fansCount}">587W</span>
+                                                                </td>
+                                                                <td>
+                                    <span class="doller_font"
+                                          th:text="${candidate.prePlayNum>=10000?(#numbers.formatDecimal(candidate.prePlayNum/10000.0,1,2)+'W'):candidate.prePlayNum}">587W</span>
+                                                                    <span class="xt_font" th:text="${candidate.xtPrePlayNum>=10000?(candidate.xtPrePlayNum/10000+'W'):candidate.xtPrePlayNum}">271.90</span>
+
+                                                                </td>
+                                                                <td>
+                                    <span class="doller_font"
+                                          th:text="${#numbers.formatDecimal(candidate.tempCpm,1,2)}">587W</span>
+                                                                    <span class="xt_font" th:text="${#numbers.formatDecimal(candidate.xtCpm,1,0)}">587W</span>
+
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-md-5 zero_padding" style="margin-top: 10px">
+                                                        <div class="col-md-6  zero_padding">
+                                                            <span class="doller_font" style="font-size: 19px!important;"
+                                                                  th:text="'￥'+${candidate.showMainPrice>=10000?(#numbers.formatDecimal(candidate.showMainPrice/10000,1,2)+'W'):candidate.showMainPrice}">￥90000</span>
+                                                            <i class="fa fa-angle-double-right fans_show"
+                                                               aria-hidden="true"
+                                                               style="font-size: 18px">
+                                                            </i>
+                                                            <div style="display:none;width:160px;position: absolute;left: 0px;top:40px;z-index: 1;background-color:#fff;box-shadow: 0 0 15px #aaa;padding: 5px;border-radius: 12px;text-align: center">
+                                                                <div th:each="price:${candidate.priceEntities}">
+                                                <span class="num_font"
+                                                      th:text="${price.timeRange+'-'+price.type+':'+price.price}"
+                                                      style="font-size: 5px!important;">271.90</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 zero_padding">
+                                                            <div class="col-md-5 zero_padding" style="margin-top: 5px">
+                                                                <!--                <button style="display: inline-block">sd</button>-->
+                                                                <div type="button"
+                                                                     th:data="${candidate.id}"
+                                                                     class="btn btn-primary btn-xs chonghe_btn"
+                                                                     style="margin: 0px;">
+                                                                    <!--                                                                    th:class="${candidate.id?'btn btn-danger btn-xs chonghe_btn':'btn btn-primary btn-xs chonghe_btn'}"-->
+                                                                    重合度
+                                                                </div>
+                                                                <div style="display: none"
+                                                                     th:text="${candidate.avatarLink}"></div>
+                                                            </div>
+                                                            <div class="col-md-4 zero_padding" style="margin-top: 5px">
+                                                                <div type="button"
+                                                                     class="btn btn-primary btn-xs add_choose_btn"
+                                                                     th:data="${candidate.id}"
+                                                                     style="margin: 0px;margin-left: 1px">
+                                                                    选定
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3 zero_padding" style="margin-top: 5px">
+                                                                <div type="button"
+                                                                     class="btn btn-danger btn-xs remove_condidate_btn"
+                                                                     th:data="${candidate.id}"
+                                                                     style="margin: 0px;">
+                                                                    移除
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->`
+    <!--main content end-->
+</section>
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="/static/lib/jquery/jquery.min.js"></script>
+<script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+<script class="include" type="text/javascript" src="/static/lib/jquery.dcjqaccordion.2.7.js"></script>
+<script src="/static/lib/jquery.scrollTo.min.js"></script>
+<script src="/static/lib/jquery.nicescroll.js" type="text/javascript"></script>
+<!--common script for all pages-->
+<script src="/static/lib/common-scripts.js"></script>
+
+<!--script for this page-->
+<script src="/static/lib/highcharts.src.js"></script>
+<script src="/static/myjs/venn.js"></script>
+<script src="/static/myjs/oldie.js"></script>
+<script src="/static/myjs/exporting.js"></script>
+<script src="/static/myjs/tools/confirmUtil.js"></script>
+<script src="/static/myjs/myjs/util.js"></script>
+<script src="/static/myjs/myjs/store.js"></script>
+<script src="/static/myjs/myjs/common.js"></script>
+<script src="/static/myjs/myjs/calculate.js"></script>
+<!--<script src="/static/myjs/myjs/test.js"></script>-->
+
+</body>
+
+</html>

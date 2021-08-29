@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<userlist th:fragment="userlist()">
+    <div id="data_panel" style="display: block" th:fragment="table_refresh">
+        <nav class="navbar navbar-default" style="height: 50px!important;margin-bottom: 0px;">
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6" style="height: 50px!important;">
+                    <p class="col-xs-4 col-md-2 zero_padding navbar-text navbar-right"
+                       style="margin-left: 0px;">
+                        <a href="#" class="navbar-link" id="price_sort" onclick="switch_sort(3)">预期播放
+                            <i class="fa fa-angle-down "></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </a>
+                    </p>
+                    <p class="col-xs-4 col-md-2 zero_padding navbar-text navbar-right"
+                       style="margin-left: 0px;">
+                        <a href="#" class="navbar-link" id="fans_sort" onclick="switch_sort(2)">粉丝数
+                            <i class="fa fa-angle-down "></i>
+                        </a>
+                    </p>
+                    <p id="default_sorts" class="col-xs-4 col-md-2 zero_padding navbar-text navbar-right"
+                       style="margin-left: 0px;">
+                        <a href="#" class="navbar-link"
+                           id="default_sort" style="color: #f45778" onclick="switch_sort(1)">
+                            综合排序
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </nav>
+
+        <!--数据栏-->
+        <div class="list-group" style="margin-bottom: 0px;"
+             th:each="user:${userlist.content}">
+            <button type="button" class="list_group_item_index list-group-item my_item_btn" th:data="${user.id}"
+                    style="position: relative;border-width: 0px!important;">
+                <div class="row">
+                    <div class="col-md-3 col-xs-3" style="padding-right: 0px!important;">
+                        <div class="col-md-3 col-xs-12" style="margin-top: 25px;">
+                            <img class="author-img"
+                                 alt="达人头像"
+                                 th:src="@{${user.avatarLink}}"
+                            />
+                        </div>
+                        <div class="col-md-9 col-xs-12"
+                             style="padding-right: 0px!important;padding-left: 35px!important;">
+                            <div class="row">
+                                <div class="nick_font" style="margin-top: 10px" th:text="${user.nickName}">
+                                    精致辣妈蓉儿
+                                </div>
+                            </div>
+                            <!--                                    <div class="row" style="height: 20px;"></div>-->
+                            <div class="row hidden-xs">
+                                <div class="label_span" th:each="type:${user.types}"
+                                     th:text="${type.typeName}">运动健身
+                                </div>
+                                <span style="margin-left: 10px" th:text="${user.showLocation}">
+                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-xs-5"
+                         style="display: flex;justify-content: center;padding-left: 0px!important;padding-right: 0px!important;margin-top: 10px;">
+                        <!--            中间数据标签-->
+                        <table class="mytable_index" style="table-layout: fixed;width: 390px!important;">
+                            <tr>
+                                <td>
+                                        <span class="doller_font"
+                                              th:text="${user.realFansCount>=10000?(user.realFansCount/10000+'W'):user.realFansCount}">587W</span>
+                                    <span class="xt_tip"
+                                          th:text=" ${user.fansCount>=10000?(user.fansCount/10000+'W'):user.fansCount}">587W</span>
+                                </td>
+                                <td>
+                                        <span class="doller_font"
+                                              th:text="${user.prePlayNum>=10000?(#numbers.formatDecimal(user.prePlayNum/10000.0,1,2)+'W'):user.prePlayNum}">587W</span>
+                                    <span class="xt_tip"
+                                          th:text="${user.xtPrePlayNum>=10000?(user.xtPrePlayNum/10000+'W'):user.xtPrePlayNum}">271.90</span>
+
+                                </td>
+                                <td>
+                                        <span class="doller_font"
+                                              th:text="${#numbers.formatDecimal(user.tempCpm,1,2)}">587W</span>
+                                    <span class="xt_tip" th:text="${#numbers.formatDecimal(user.xtCpm,1,0)}">587W</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>粉丝数</td>
+                                <td>预期播放量</td>
+                                <td>预期cpm</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-4 col-xs-4 mini-zero-padding " style="margin-top: 20px">
+                        <div class="price_data col-md-11 col-xs-11 mini-zero-padding" style="margin-top: 5px">
+                            <div class="col-md-6 col-xs-12 col-md-offset-4 zero_padding"
+                                 style="position: relative">
+                                       <span class="doller_font"
+                                             th:text="'￥'+${user.showMainPrice>=10000?(#numbers.formatDecimal(user.showMainPrice/10000,1,2)+'W'):user.showMainPrice}">￥90000</span>
+                                <!--                                        todo 修改价格数据的显示 -->
+                                <i class="fa fa-angle-double-right fans_show hidden-xs hidden-sm"
+                                   aria-hidden="true"
+                                   style="font-size: 18px;">
+                                </i>
+                                <!--style="font-size: 18px;position: absolute;top: 7px;right: 55px"-->
+                                <div style="display:none;width:160px;position: absolute;left: 0px;top:40px;z-index: 1;background-color:#fff;box-shadow: 0 0 15px #aaa;padding: 5px;border-radius: 12px;text-align: center">
+                                    <div th:each="price:${user.priceEntities}" th:switch="${price.type}">
+                                        <span class="num_font" th:case="'固定价格'"
+                                              th:text="${price.timeRange+':'+price.price+'￥'}"
+                                              style="font-size: 5px!important;">271.90</span>
+                                        <span class="num_font" th:case="*"
+                                              th:text="${price.timeRange+':'+price.type}"
+                                              style="font-size: 5px!important;">271.90</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div mydata="精致辣妈蓉儿" class="col-md-1 col-xs-4  zero_padding mini-chonghe_btn"
+                                 style="position: relative">
+                                <!--                <button style="display: inline-block">sd</button>-->
+                                <div th:data="${user.id}" th:data-id="${user.nickName}" type="button"
+                                     class="btn btn-primary btn-sm chonghe_btn"
+                                     style="padding: 2px;position: absolute;right: 0px;top: 3px">重合度
+                                </div>
+                                <div style="display: none" th:text="${user.avatarLink}"></div>
+                            </div>
+                            <div class="col-md-1 col-xs-4  zero_padding" style="position: relative">
+                                <div th:data="${user.id}" type="button"
+                                     class="btn btn-primary btn-sm add_candidate_btn"
+                                     style="padding: 2px;position: absolute;right: -8px;top: 3px">添加
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+        <div style="background-color:#fff;height: 80px">
+            <!--分页导航-->
+            <nav aria-label="Page navigation" style="float: right;margin-right: 100px">
+                <ul class="pagination" id="mynav">
+                    <li>
+                        <a href='#' style="border-width: 0px;margin-right: 5px">
+                            共 <span th:text="${userlist.totalPages}">0</span>页
+                        </a>
+                    </li>
+                    <li onclick="localRefresh(this)" th:if="${!userlist.first}" th:data="${userlist.number}">
+                        <a aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li onclick="localRefresh(this)" th:data="${userlist.number-1}"
+                        th:if="${userlist.number+1>2}">
+                        <a href="#" th:text="${userlist.number-1}">1</a>
+                    </li>
+                    <li onclick="localRefresh(this)" th:data="${userlist.number}"
+                        th:if="${userlist.number+1>1}">
+                        <a href="#" th:text="${userlist.number}">2</a>
+                    </li>
+                    <li onclick="localRefresh(this)" th:data="${userlist.number+1}">
+                        <a href="#" th:text="${userlist.number+1}">3</a>
+                    </li>
+                    <li onclick="localRefresh(this)" th:data="${userlist.number+2}"
+                        th:if="${userlist.number+1<=userlist.totalPages-1}">
+                        <a href="#"
+                           th:text="${userlist.number+2}">4</a>
+                    </li>
+                    <li onclick="localRefresh(this)" th:data="${userlist.number+3}"
+                        th:if="${userlist.number+1<=userlist.totalPages-2}">
+                        <a href="#"
+                           th:text="${userlist.number+3}">5</a>
+                    </li>
+                    <li onclick="localRefresh(this)" th:data="${userlist.number+2}"
+                        th:if="${!userlist.last}">
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</userlist>
+</body>
+</html>
