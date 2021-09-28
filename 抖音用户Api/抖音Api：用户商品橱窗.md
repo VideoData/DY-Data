@@ -1,0 +1,290 @@
+# 抖音Api：用户商品橱窗
+
+
+## 抖音视频Api、抖音直播Api、抖音评论采集、抖音弹幕采集、抖音爬虫、抖音去水印、抖音视频下载、抖音视频解析
+## 抖音直播数据、抖音数据采集、抖音直播监控
+
+### 免责声明
+```
+有任何问题可交流学习
+请勿使用本服务于商用
+请勿使用本服务大量抓取
+若因使用本服务与抖音造成不必要的纠纷，本人盖不负责
+本人纯粹技术爱好，若侵犯抖音贵公司的权益，请告知
+```
+```
+
+
+## 抖音用户商品橱窗Api：
+
+### 请求Api
+```http
+http://主机地址/douyin/user/promotions?token=xxx&uid=71105932077&cursor=0
+
+```
+
+### 
+
+### 请求方式
+```http
+GET
+```
+
+### 
+
+### 参数
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| token | string | 接口授权码 |
+| uid | int | 用户id|
+| cursor | int | 翻页游标，根据结果返回的cursor传入作为下一页翻页参数，初始为0 |
+
+
+### 
+
+### 返回示例
+```json
+{
+    "code":200,
+    "data":{
+        "columns":[
+            {
+                "can_reverse":false,
+                "default_sort":0,
+                "id":0,
+                "name":"综合排序"
+            },
+            {
+                "can_reverse":false,
+                "default_sort":0,
+                "id":1,
+                "name":"销量"
+            },
+            {
+                "can_reverse":false,
+                "default_sort":0,
+                "id":2,
+                "name":"上新时间"
+            },
+            {
+                "can_reverse":true,
+                "default_sort":1,
+                "id":3,
+                "name":"价格"
+            }
+        ],
+        "count":352,
+        "extra":{
+            "fatal_item_ids":[
+            ],
+            "logid":"2020091422095701019806020639266AEC",
+            "now":1600092597000
+        },
+        "has_more":true,
+        "log_pb":{
+            "impr_id":"2020091422095701019806020639266AEC"
+        },
+        "promotions":[
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            {
+                "brand_icon":{
+                    "uri":"db00001bcc4cfde8d96a",
+                    "url_list":[
+                        "http://p3.pstatp.com/origin/db00001bcc4cfde8d96a"
+                    ]
+                },
+                "consumer_comment":null,
+                "cos_fee":0,
+                "detail_url":"https://haohuo.jinritemai.com/views/product/item2?id=3420911657696812285&origin_type=3002070010&origin_id=71105932077_3420911657696812285&alkey=1128_71105932077_0_3420911657696812285_010",
+                "elastic_images":[
+                    {
+                        "height":720,
+                        "uri":"temai/FtsKTipA-dJpYHBR7HYxqJZZ4fnEwww600-601",
+                        "url_list":[
+                            "http://p1.pstatp.com/aweme/720x720/temai/FtsKTipA-dJpYHBR7HYxqJZZ4fnEwww600-601.jpeg",
+                            "http://pb3.pstatp.com/aweme/720x720/temai/FtsKTipA-dJpYHBR7HYxqJZZ4fnEwww600-601.jpeg",
+                            "http://pb3.pstatp.com/aweme/720x720/temai/FtsKTipA-dJpYHBR7HYxqJZZ4fnEwww600-601.jpeg"
+                        ],
+                        "width":720
+                    },
+                    {
+                        "height":720,
+                        "uri":"temai/FiyKM0swr7x_ls1iopxbr_FsTXgWwww600-600",
+                        "url_list":[
+                            "http://p1.pstatp.com/aweme/720x720/temai/FiyKM0swr7x_ls1iopxbr_FsTXgWwww600-600.jpeg",
+                            "http://pb3.pstatp.com/aweme/720x720/temai/FiyKM0swr7x_ls1iopxbr_FsTXgWwww600-600.jpeg",
+                            "http://pb3.pstatp.com/aweme/720x720/temai/FiyKM0swr7x_ls1iopxbr_FsTXgWwww600-600.jpeg"
+                        ],
+                        "width":720
+                    }
+                ],
+                "elastic_type":1,
+                "favorited":false,
+                "goods_source":"来自小店",
+                "has_gyl":false,
+                "images":[
+                    {
+                        "height":720,
+                        "uri":"temai/FtsKTipA-dJpYHBR7HYxqJZZ4fnEwww600-601",
+                        "url_list":[
+                            "http://p1.pstatp.com/obj/temai/FtsKTipA-dJpYHBR7HYxqJZZ4fnEwww600-601",
+                            "http://pb3.pstatp.com/obj/temai/FtsKTipA-dJpYHBR7HYxqJZZ4fnEwww600-601",
+                            "http://pb3.pstatp.com/obj/temai/FtsKTipA-dJpYHBR7HYxqJZZ4fnEwww600-601"
+                        ],
+                        "width":720
+                    },
+                    {
+                        "height":720,
+                        "uri":"temai/FiyKM0swr7x_ls1iopxbr_FsTXgWwww600-600",
+                        "url_list":[
+                            "http://p1.pstatp.com/obj/temai/FiyKM0swr7x_ls1iopxbr_FsTXgWwww600-600",
+                            "http://pb3.pstatp.com/obj/temai/FiyKM0swr7x_ls1iopxbr_FsTXgWwww600-600",
+                            "http://pb3.pstatp.com/obj/temai/FiyKM0swr7x_ls1iopxbr_FsTXgWwww600-600"
+                        ],
+                        "width":720
+                    }
+                ],
+                "jump_to_url":false,
+                "label":null,
+                "market_price":99900,
+                "marketing_floors":null,
+                "medias":null,
+                "meta_param":"%7B%22page_type%22%3A0%7D",
+                "min_price":99900,
+                "module_control":{
+                    "comment":{
+                        "visible":true
+                    },
+                    "order_share":{
+                        "visible":true
+                    },
+                    "store_card":{
+                        "visible":true
+                    },
+                    "store_icon":{
+                        "visible":true
+                    },
+                    "want":{
+                        "visible":true
+                    }
+                },
+                "pic_audit_status":null,
+                "price":99900,
+                "price_tag":"",
+                "product_id":"3420911657696812285",
+                "promotion_id":"3420911657696812285",
+                "promotion_source":6,
+                "sales":225,
+                "shop_icons":[
+                ],
+                "status":2,
+                "title":"I1C096676 法式方领上衣",
+                "toutiao":{
+                    "aggregate_page":null,
+                    "already_buy":false,
+                    "button":{
+                        "h5_url":"https://haohuo.jinritemai.com/views/product/buynow?id=3420911657696812285&product_id=3420911657696812285&origin_type=3002070010&origin_id=71105932077_3420911657696812285&disable_activity=0&group_id=0&alkey=1128_71105932077_0_3420911657696812285_010&new_source_type=product_detail&status_bar_color=ffffff&loading_bgcolor=ffffff&hide_nav_bar=1&status_font_dark=1",
+                        "order_status":1,
+                        "sku_confirm_text":[
+                            "确定"
+                        ],
+                        "small_app_url":"sslocal://microapp?version=v2&app_id=tt7cca0a77e3e0cd15&scene=027001&version_type=current&start_page=pages%2Fproduct-pay%2Fproduct-pay%3Falkey%3D1128_71105932077_0_3420911657696812285_010%26disable_activity%3D0%26new_source_type%3Dproduct_detail%26origin_id%3D71105932077_3420911657696812285%26origin_type%3D3002070010%26product_id%3D3420911657696812285&bdp_log=%7B%22launch_from%22%3A%22full_screen_card%22%2C%22location%22%3A%22click_product%22%7D&bdpsum=bb62544",
+                        "text":[
+                            "立即购买"
+                        ]
+                    },
+                    "cart_url":"https://haohuo.jinritemai.com/views/cart/index?status_bar_color=ffffff&loading_bgcolor=ffffff&hide_nav_bar=1&status_font_dark=1",
+                    "coupon_rule":null,
+                    "delivery_delay_text":"下单后15天内发货",
+                    "detail_url":"https://haohuo.jinritemai.com/views/product/item2?id=3420911657696812285&origin_type=3002070010&origin_id=71105932077_3420911657696812285&alkey=1128_71105932077_0_3420911657696812285_010",
+                    "im_url":"https://im.jinritemai.com/douyin_mobile_customer_from_goods/?fromGoods=3420911657696812285&origin_id=71105932077_3420911657696812285&origin_type=3002070010&alkey=1128_71105932077_0_3420911657696812285_010",
+                    "max_price":99900,
+                    "min_price":99900,
+                    "need_check":true,
+                    "order_tma_url":"sslocal://microapp?version=v2&app_id=tt7cca0a77e3e0cd15&scene=027001&version_type=current&start_page=pages%2Fproduct-pay%2Fproduct-pay%3Falkey%3D1128_71105932077_0_3420911657696812285_010%26disable_activity%3D0%26new_source_type%3Dproduct_detail%26origin_id%3D71105932077_3420911657696812285%26origin_type%3D3002070010%26product_id%3D3420911657696812285&bdp_log=%7B%22launch_from%22%3A%22full_screen_card%22%2C%22location%22%3A%22click_product%22%7D&bdpsum=bb62544",
+                    "order_url":"https://haohuo.jinritemai.com/views/product/buynow?id=3420911657696812285&product_id=3420911657696812285&origin_type=3002070010&origin_id=71105932077_3420911657696812285&disable_activity=0&group_id=0&alkey=1128_71105932077_0_3420911657696812285_010&new_source_type=product_detail&status_bar_color=ffffff&loading_bgcolor=ffffff&hide_nav_bar=1&status_font_dark=1",
+                    "origin_id":"71105932077_3420911657696812285",
+                    "origin_type":"3002070010",
+                    "shop_name":"涵胖胖大码女装",
+                    "virtual_promotion":{
+                        "already_buy":false,
+                        "is":false
+                    }
+                },
+                "user_shop_categories":null,
+                "visitor":{
+                    "avatar":[
+                        {
+                            "uri":"100x100/30ebf0003c1e35fd0e1e5",
+                            "url_list":[
+                                "https://p3-dy-ipv6.byteimg.com/aweme/100x100/30ebf0003c1e35fd0e1e5.jpeg?from=4010531038",
+                                "https://p6-dy-ipv6.byteimg.com/aweme/100x100/30ebf0003c1e35fd0e1e5.jpeg?from=4010531038",
+                                "https://p29-dy.byteimg.com/aweme/100x100/30ebf0003c1e35fd0e1e5.jpeg?from=4010531038"
+                            ]
+                        },
+                        {
+                            "uri":"100x100/tos-cn-avt-0015/0e9cff37376d21868799b6efa5b61a76",
+                            "url_list":[
+                                "https://p3-dy-ipv6.byteimg.com/img/tos-cn-avt-0015/0e9cff37376d21868799b6efa5b61a76~c5_100x100.jpeg?from=4010531038",
+                                "https://p9-dy.byteimg.com/img/tos-cn-avt-0015/0e9cff37376d21868799b6efa5b61a76~c5_100x100.jpeg?from=4010531038",
+                                "https://p29-dy.byteimg.com/img/tos-cn-avt-0015/0e9cff37376d21868799b6efa5b61a76~c5_100x100.jpeg?from=4010531038"
+                            ]
+                        },
+                        {
+                            "uri":"100x100/26e1400009f60609d0719",
+                            "url_list":[
+                                "https://p6-dy-ipv6.byteimg.com/aweme/100x100/26e1400009f60609d0719.jpeg?from=4010531038",
+                                "https://p29-dy.byteimg.com/aweme/100x100/26e1400009f60609d0719.jpeg?from=4010531038",
+                                "https://p3-dy-ipv6.byteimg.com/aweme/100x100/26e1400009f60609d0719.jpeg?from=4010531038"
+                            ]
+                        },
+                        {
+                            "uri":"100x100/318c1000c282ce0281fd9",
+                            "url_list":[
+                                "https://p26-dy.byteimg.com/aweme/100x100/318c1000c282ce0281fd9.jpeg?from=4010531038",
+                                "https://p3-dy-ipv6.byteimg.com/aweme/100x100/318c1000c282ce0281fd9.jpeg?from=4010531038",
+                                "https://p9-dy.byteimg.com/aweme/100x100/318c1000c282ce0281fd9.jpeg?from=4010531038"
+                            ]
+                        },
+                        {
+                            "uri":"100x100/f9540003473023bc8a0c",
+                            "url_list":[
+                                "https://p9-dy.byteimg.com/aweme/100x100/f9540003473023bc8a0c.jpeg?from=4010531038",
+                                "https://p6-dy-ipv6.byteimg.com/aweme/100x100/f9540003473023bc8a0c.jpeg?from=4010531038",
+                                "https://p26-dy.byteimg.com/aweme/100x100/f9540003473023bc8a0c.jpeg?from=4010531038"
+                            ]
+                        }
+                    ],
+                    "count":4658
+                }
+            }
+        ],
+        "rows":[
+            {
+                "id":1,
+                "name":"我的",
+                "number":66,
+                "with_data":true
+            },
+            {
+                "id":2,
+                "name":"推荐",
+                "number":286,
+                "with_data":false
+            }
+        ],
+        "search_hint":"",
+        "status_code":0,
+        "status_msg":""
+    },
+    "msg":"success"
+}
+```

@@ -1,0 +1,384 @@
+# 抖音榜单Api：直播榜
+
+## 抖音视频Api、抖音直播Api、抖音评论采集、抖音弹幕采集、抖音爬虫、抖音去水印、抖音视频下载、抖音视频解析
+## 抖音直播数据、抖音数据采集、抖音直播监控
+
+### 免责声明
+```
+有任何问题可交流学习
+请勿使用本服务于商用
+请勿使用本服务大量抓取
+若因使用本服务与抖音造成不必要的纠纷，本人盖不负责
+本人纯粹技术爱好，若侵犯抖音贵公司的权益，请告知
+```
+```
+
+
+## 抖音榜单：直播榜
+
+### 请求Api
+```http
+http://主机地址/douyin/board/live?token=xxx
+
+```
+
+### 
+
+### 请求方式
+```http
+GET
+```
+
+### 
+
+### 参数
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| token | string | 接口授权码 |
+
+
+### 
+
+### 返回示例
+```json
+
+{
+    "code":200,
+    "data":{
+        "data":{
+            "ranks":[
+                {
+                    "gap_description":"",
+                    "label":"电商",
+                    "rank":1,
+                    "room":{
+                        "challenge_info":"",
+                        "content_label":{
+                            "avg_color":"#524937",
+                            "height":0,
+                            "image_type":0,
+                            "is_animated":false,
+                            "open_web_url":"",
+                            "uri":"webcast/aweme_cover_redPackage_webcast_3_2.png",
+                            "url_list":[
+                                "http://p1-webcast-dycdn.byteimg.com/img/webcast/aweme_cover_redPackage_webcast_3_2.png~tplv-obj.image",
+                                "http://p3-webcast-dycdn.byteimg.com/img/webcast/aweme_cover_redPackage_webcast_3_2.png~tplv-obj.image"
+                            ],
+                            "width":0
+                        },
+                        "cover":{
+                            "avg_color":"#405237",
+                            "height":0,
+                            "image_type":0,
+                            "is_animated":false,
+                            "open_web_url":"",
+                            "uri":"b6de001c06cc094d69f4",
+                            "url_list":[
+                                "http://p9-webcast-dycdn.byteimg.com/img/mosaic-legacy/b6de001c06cc094d69f4~tplv-obj.image",
+                                "http://p6-webcast-dycdn.byteimg.com/img/mosaic-legacy/b6de001c06cc094d69f4~tplv-obj.image"
+                            ],
+                            "width":0
+                        },
+                        "id":6872311766090140416,
+                        "id_str":"6872311766090140416",
+                        "title":"忠哥正在直播",
+                        "user_count":228388
+                    },
+                    "score":2329697,
+                    "user":{
+                        "adversary_authorization_info":1,
+                        "adversary_user_status":0,
+                        "allow_be_located":false,
+                        "allow_find_by_contacts":false,
+                        "allow_others_download_video":false,
+                        "allow_others_download_when_sharing_video":false,
+                        "allow_share_show_profile":false,
+                        "allow_show_in_gossip":false,
+                        "allow_show_my_action":false,
+                        "allow_strange_comment":false,
+                        "allow_unfollower_comment":false,
+                        "allow_use_linkmic":false,
+                        "authentication_info":{
+                            "authentication_badge":{
+                                "avg_color":"",
+                                "height":0,
+                                "image_type":0,
+                                "is_animated":false,
+                                "open_web_url":"",
+                                "uri":"webcast/authentication_icon.png",
+                                "url_list":[
+                                    "http://p3-webcast-dycdn.byteimg.com/img/webcast/authentication_icon.png~tplv-obj.image",
+                                    "http://p6-webcast-dycdn.byteimg.com/img/webcast/authentication_icon.png~tplv-obj.image"
+                                ],
+                                "width":0
+                            },
+                            "custom_verify":"年度巅峰主播十强",
+                            "enterprise_verify_reason":""
+                        },
+                        "authorization_info":3,
+                        "avatar_large":{
+                            "avg_color":"",
+                            "height":0,
+                            "image_type":0,
+                            "is_animated":false,
+                            "open_web_url":"",
+                            "uri":"1080x1080/b6de001c06cc094d69f4",
+                            "url_list":[
+                                "https://p3-dy-ipv6.byteimg.com/aweme/1080x1080/b6de001c06cc094d69f4.jpeg?from=4010531038",
+                                "https://p9-dy.byteimg.com/aweme/1080x1080/b6de001c06cc094d69f4.jpeg?from=4010531038",
+                                "https://p29-dy.byteimg.com/aweme/1080x1080/b6de001c06cc094d69f4.jpeg?from=4010531038"
+                            ],
+                            "width":0
+                        },
+                        "avatar_medium":{
+                            "avg_color":"",
+                            "height":0,
+                            "image_type":0,
+                            "is_animated":false,
+                            "open_web_url":"",
+                            "uri":"720x720/b6de001c06cc094d69f4",
+                            "url_list":[
+                                "https://p6-dy-ipv6.byteimg.com/aweme/720x720/b6de001c06cc094d69f4.jpeg?from=4010531038",
+                                "https://p3-dy-ipv6.byteimg.com/aweme/720x720/b6de001c06cc094d69f4.jpeg?from=4010531038",
+                                "https://p9-dy.byteimg.com/aweme/720x720/b6de001c06cc094d69f4.jpeg?from=4010531038"
+                            ],
+                            "width":0
+                        },
+                        "avatar_thumb":{
+                            "avg_color":"",
+                            "height":0,
+                            "image_type":0,
+                            "is_animated":false,
+                            "open_web_url":"",
+                            "uri":"100x100/b6de001c06cc094d69f4",
+                            "url_list":[
+                                "https://p3-dy-ipv6.byteimg.com/aweme/100x100/b6de001c06cc094d69f4.jpeg?from=4010531038",
+                                "https://p6-dy-ipv6.byteimg.com/aweme/100x100/b6de001c06cc094d69f4.jpeg?from=4010531038",
+                                "https://p29-dy.byteimg.com/aweme/100x100/b6de001c06cc094d69f4.jpeg?from=4010531038"
+                            ],
+                            "width":0
+                        },
+                        "badge_image_list":[
+                            {
+                                "avg_color":"",
+                                "height":16,
+                                "image_type":1,
+                                "is_animated":false,
+                                "open_web_url":"",
+                                "uri":"webcast/aweme_honor_level_icon_new_54.png",
+                                "url_list":[
+                                    "http://p6-webcast-dycdn.byteimg.com/img/webcast/aweme_honor_level_icon_new_54.png~tplv-obj.image",
+                                    "http://p3-webcast-dycdn.byteimg.com/img/webcast/aweme_honor_level_icon_new_54.png~tplv-obj.image"
+                                ],
+                                "width":32
+                            }
+                        ],
+                        "bg_img_url":"",
+                        "birthday":0,
+                        "birthday_description":"",
+                        "birthday_valid":false,
+                        "block_status":0,
+                        "border":{
+                            "icon":{
+                                "avg_color":"",
+                                "height":282,
+                                "image_type":0,
+                                "is_animated":false,
+                                "open_web_url":"",
+                                "uri":"webcast/ranklist_avatar_border_1.png",
+                                "url_list":[
+                                    "http://p9-webcast-dycdn.byteimg.com/img/webcast/ranklist_avatar_border_1.png~tplv-obj.png",
+                                    "http://p3-webcast-dycdn.byteimg.com/img/webcast/ranklist_avatar_border_1.png~tplv-obj.png"
+                                ],
+                                "width":282
+                            },
+                            "level":0
+                        },
+                        "city":"芜湖",
+                        "comment_restrict":0,
+                        "commerce_webcast_config_ids":[
+                        ],
+                        "constellation":"",
+                        "create_time":0,
+                        "disable_ichat":0,
+                        "display_id":"asdfghjkl051088",
+                        "enable_ichat_img":0,
+                        "exp":0,
+                        "experience":0,
+                        "fan_ticket_count":0,
+                        "fans_club":{
+                            "data":{
+                                "anchor_id":0,
+                                "available_gift_ids":[
+                                ],
+                                "badge":{
+                                    "icons":{
+                                        "0":{
+                                            "avg_color":"",
+                                            "height":0,
+                                            "image_type":0,
+                                            "is_animated":false,
+                                            "open_web_url":"",
+                                            "uri":"",
+                                            "url_list":[
+                                            ],
+                                            "width":0
+                                        }
+                                    },
+                                    "title":""
+                                },
+                                "club_name":"",
+                                "level":0,
+                                "user_fans_club_status":0
+                            },
+                            "prefer_data":{
+                            }
+                        },
+                        "fold_stranger_chat":false,
+                        "follow_info":{
+                            "follow_status":0,
+                            "follower_count":16116971,
+                            "following_count":3147,
+                            "push_status":0
+                        },
+                        "follow_status":0,
+                        "gender":1,
+                        "hotsoon_verified":false,
+                        "hotsoon_verified_reason":"",
+                        "ichat_restrict_type":0,
+                        "id":84064249580,
+                        "id_str":"84064249580",
+                        "income_share_percent":0,
+                        "is_follower":false,
+                        "is_following":false,
+                        "level":1,
+                        "link_mic_stats":1,
+                        "media_badge_image_list":[
+                        ],
+                        "modify_time":1600097347,
+                        "need_profile_guide":false,
+                        "new_real_time_icons":[
+                        ],
+                        "nickname":"忠哥",
+                        "own_room":{
+                            "room_ids":[
+                                6872311766090141000
+                            ],
+                            "room_ids_str":[
+                                "6872311766090140416"
+                            ]
+                        },
+                        "pay_grade":{
+                            "grade_banner":"",
+                            "grade_describe":"距离55级还差525.6w抖币",
+                            "grade_icon_list":[
+                            ],
+                            "level":54,
+                            "name":"",
+                            "new_im_icon_with_level":{
+                                "avg_color":"",
+                                "height":16,
+                                "image_type":1,
+                                "is_animated":false,
+                                "open_web_url":"",
+                                "uri":"webcast/aweme_honor_level_icon_new_54.png",
+                                "url_list":[
+                                    "http://p6-webcast-dycdn.byteimg.com/img/webcast/aweme_honor_level_icon_new_54.png~tplv-obj.image",
+                                    "http://p3-webcast-dycdn.byteimg.com/img/webcast/aweme_honor_level_icon_new_54.png~tplv-obj.image"
+                                ],
+                                "width":32
+                            },
+                            "new_live_icon":{
+                                "avg_color":"",
+                                "height":12,
+                                "image_type":1,
+                                "is_animated":false,
+                                "open_web_url":"",
+                                "uri":"webcast/aweme_pay_grade_2x_45_49.png",
+                                "url_list":[
+                                    "http://p9-webcast-dycdn.byteimg.com/img/webcast/aweme_pay_grade_2x_45_49.png~tplv-obj.image",
+                                    "http://p3-webcast-dycdn.byteimg.com/img/webcast/aweme_pay_grade_2x_45_49.png~tplv-obj.image"
+                                ],
+                                "width":12
+                            },
+                            "next_diamond":0,
+                            "next_name":"",
+                            "next_privileges":"",
+                            "now_diamond":0,
+                            "pay_diamond_bak":0,
+                            "score":45744166,
+                            "screen_chat_type":0,
+                            "this_grade_max_diamond":51000000,
+                            "this_grade_min_diamond":39000000,
+                            "total_diamond_count":45744166,
+                            "upgrade_need_consume":0
+                        },
+                        "pay_score":45744166,
+                        "pay_scores":0,
+                        "personal_card":{
+                            "avg_color":"",
+                            "height":318,
+                            "image_type":0,
+                            "is_animated":false,
+                            "open_web_url":"",
+                            "uri":"webcast/ranklist_card_1_new.png",
+                            "url_list":[
+                                "http://p6-webcast-dycdn.byteimg.com/img/webcast/ranklist_card_1_new.png~tplv-obj.png",
+                                "http://p3-webcast-dycdn.byteimg.com/img/webcast/ranklist_card_1_new.png~tplv-obj.png"
+                            ],
+                            "width":1125
+                        },
+                        "push_comment_status":false,
+                        "push_digg":false,
+                        "push_follow":false,
+                        "push_friend_action":false,
+                        "push_ichat":false,
+                        "push_status":false,
+                        "push_video_post":false,
+                        "push_video_recommend":false,
+                        "real_time_icons":[
+                        ],
+                        "sec_uid":"MS4wLjABAAAAKVZWDB76QBqzxdT3FNvT8QDm4wy6N0JmF1Iuc-YaCEY",
+                        "secret":0,
+                        "share_qrcode_uri":"552400261c98a1433341",
+                        "short_id":183381344,
+                        "signature":"做人笨一点，离成功近一点！我只有这一个号！
+每晚9点直播",
+                        "special_id":"",
+                        "status":1,
+                        "telephone":"",
+                        "ticket_count":1067166842,
+                        "top_fans":[
+                        ],
+                        "top_vip_no":0,
+                        "total_recharge_diamond_count":0,
+                        "user_attr":{
+                            "is_admin":false,
+                            "is_muted":false,
+                            "is_super_admin":false
+                        },
+                        "user_role":0,
+                        "verified":true,
+                        "verified_content":"",
+                        "verified_mobile":false,
+                        "verified_reason":"",
+                        "with_car_management_permission":false,
+                        "with_commerce_permission":true,
+                        "with_fusion_shop_entry":true
+                    }
+                },
+                Object{...}
+            ],
+            "top_image_url":"http://sf1-dycdn-tos.pstatp.com/obj/webcast/live_hot_rank.png",
+            "updated_at":1600097359
+        },
+        "extra":{
+            "now":1600097360167
+        },
+        "status_code":0
+    },
+    "msg":"success"
+}
+```
+
+

@@ -1,0 +1,345 @@
+# 抖音Api：话题搜索列表
+
+## 抖音视频Api、抖音直播Api、抖音评论采集、抖音弹幕采集、抖音爬虫、抖音去水印、抖音视频下载、抖音视频解析
+## 抖音直播数据、抖音数据采集、抖音直播监控
+
+### 免责声明
+```
+有任何问题可交流学习
+请勿使用本服务于商用
+请勿使用本服务大量抓取
+若因使用本服务与抖音造成不必要的纠纷，本人盖不负责
+本人纯粹技术爱好，若侵犯抖音贵公司的权益，请告知
+```
+```
+
+
+## 抖音话题搜索列表Api：
+
+### 请求Api
+```http
+http://主机地址/douyin/search/challenges?token=xxx&keyword=热巴&cursor=20
+
+```
+
+### 
+
+### 请求方式
+```http
+GET
+```
+
+### 
+
+### 参数
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| token | string | 接口授权码 |
+| keyword | string | 搜索关键词 |
+| cursor | int | 翻页游标，根据结果返回的cursor传入作为下一页翻页参数，初始为0 |
+
+### 
+
+### 返回示例
+```json
+{
+    "code":200,
+    "data":{
+        "ad_info":{
+        },
+        "challenge_list":[
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            Object{...},
+            {
+                "challenge_info":{
+                    "author":{
+                        "accept_private_policy":false,
+                        "account_region":"",
+                        "ad_cover_url":null,
+                        "apple_account":0,
+                        "authority_status":0,
+                        "avatar_168x168":{
+                            "height":720,
+                            "uri":"168x168/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9",
+                            "url_list":[
+                                "https://p3-dy-ipv6.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_168x168.webp?from=273881474",
+                                "https://p29-dy.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_168x168.webp?from=273881474",
+                                "https://p9-dy.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_168x168.webp?from=273881474",
+                                "https://p3-dy-ipv6.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_168x168.jpeg?from=273881474"
+                            ],
+                            "width":720
+                        },
+                        "avatar_300x300":{
+                            "height":720,
+                            "uri":"300x300/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9",
+                            "url_list":[
+                                "https://p26-dy.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_300x300.webp?from=273881474",
+                                "https://p6-dy-ipv6.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_300x300.webp?from=273881474",
+                                "https://p3-dy-ipv6.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_300x300.webp?from=273881474",
+                                "https://p26-dy.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_300x300.jpeg?from=273881474"
+                            ],
+                            "width":720
+                        },
+                        "avatar_larger":{
+                            "height":720,
+                            "uri":"1080x1080/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9",
+                            "url_list":[
+                                "https://p3-dy-ipv6.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_1080x1080.webp?from=273881474",
+                                "https://p1-dy-ipv6.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_1080x1080.webp?from=273881474",
+                                "https://p9-dy.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_1080x1080.webp?from=273881474",
+                                "https://p3-dy-ipv6.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_1080x1080.jpeg?from=273881474"
+                            ],
+                            "width":720
+                        },
+                        "avatar_medium":{
+                            "height":720,
+                            "uri":"720x720/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9",
+                            "url_list":[
+                                "https://p1-dy-ipv6.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_720x720.webp?from=273881474",
+                                "https://p29-dy.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_720x720.webp?from=273881474",
+                                "https://p26-dy.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_720x720.webp?from=273881474",
+                                "https://p1-dy-ipv6.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_720x720.jpeg?from=273881474"
+                            ],
+                            "width":720
+                        },
+                        "avatar_thumb":{
+                            "height":720,
+                            "uri":"100x100/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9",
+                            "url_list":[
+                                "https://p3-dy-ipv6.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_100x100.webp?from=273881474",
+                                "https://p9-dy.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_100x100.webp?from=273881474",
+                                "https://p29-dy.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_100x100.webp?from=273881474",
+                                "https://p3-dy-ipv6.byteimg.com/img/tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9~c5_100x100.jpeg?from=273881474"
+                            ],
+                            "width":720
+                        },
+                        "avatar_uri":"tos-cn-i-0813/15c16d3dc94e45e29e933ade1f7cd9a9",
+                        "aweme_count":0,
+                        "bind_phone":"",
+                        "birthday":"",
+                        "can_set_geofencing":null,
+                        "cha_list":null,
+                        "comment_filter_status":0,
+                        "comment_setting":0,
+                        "commerce_user_level":0,
+                        "constellation":2,
+                        "cover_url":[
+                            {
+                                "height":720,
+                                "uri":"c8510002be9a3a61aad2",
+                                "url_list":[
+                                    "https://p9-dy.byteimg.com/obj/c8510002be9a3a61aad2?from=273881474",
+                                    "https://p26-dy.byteimg.com/obj/c8510002be9a3a61aad2?from=273881474",
+                                    "https://p3-dy-ipv6.byteimg.com/obj/c8510002be9a3a61aad2?from=273881474"
+                                ],
+                                "width":720
+                            }
+                        ],
+                        "create_time":0,
+                        "custom_verify":"",
+                        "cv_level":"",
+                        "download_prompt_ts":0,
+                        "download_setting":-1,
+                        "duet_setting":0,
+                        "enable_nearby_visible":true,
+                        "enterprise_verify_reason":"",
+                        "favoriting_count":0,
+                        "fb_expire_time":0,
+                        "follow_status":0,
+                        "follower_count":0,
+                        "follower_status":0,
+                        "followers_detail":null,
+                        "following_count":0,
+                        "gender":2,
+                        "geofencing":[
+                        ],
+                        "google_account":"",
+                        "has_email":false,
+                        "has_facebook_token":false,
+                        "has_insights":false,
+                        "has_orders":false,
+                        "has_twitter_token":false,
+                        "has_unread_story":false,
+                        "has_youtube_token":false,
+                        "hide_location":false,
+                        "hide_search":true,
+                        "homepage_bottom_toast":null,
+                        "ins_id":"",
+                        "is_ad_fake":false,
+                        "is_binded_weibo":false,
+                        "is_block":false,
+                        "is_discipline_member":false,
+                        "is_gov_media_vip":false,
+                        "is_phone_binded":false,
+                        "is_star":false,
+                        "is_verified":true,
+                        "item_list":null,
+                        "language":"zh-Hans",
+                        "live_agreement":0,
+                        "live_agreement_time":0,
+                        "live_commerce":false,
+                        "live_verify":0,
+                        "location":"",
+                        "need_points":null,
+                        "need_recommend":0,
+                        "neiguang_shield":0,
+                        "new_story_cover":null,
+                        "nickname":"小阮即正义！",
+                        "platform_sync_info":null,
+                        "prevent_download":false,
+                        "react_setting":0,
+                        "reflow_page_gid":0,
+                        "reflow_page_uid":0,
+                        "region":"CN",
+                        "relative_users":null,
+                        "room_id":0,
+                        "school_name":"",
+                        "school_poi_id":"",
+                        "school_type":0,
+                        "sec_uid":"MS4wLjABAAAAxcf-5KzpWLjq5NsrFhWXlkw99-dOL3IZAULvY4996vM",
+                        "secret":0,
+                        "share_info":{
+                            "share_desc":"",
+                            "share_desc_info":"",
+                            "share_qrcode_url":{
+                                "height":720,
+                                "uri":"75bb0010835c6789e6dd",
+                                "url_list":[
+                                    "https://p29-dy.byteimg.com/obj/75bb0010835c6789e6dd?from=273881474",
+                                    "https://p26-dy.byteimg.com/obj/75bb0010835c6789e6dd?from=273881474",
+                                    "https://p3-dy-ipv6.byteimg.com/obj/75bb0010835c6789e6dd?from=273881474"
+                                ],
+                                "width":720
+                            },
+                            "share_title":"",
+                            "share_title_myself":"",
+                            "share_title_other":"",
+                            "share_url":"",
+                            "share_weibo_desc":""
+                        },
+                        "share_qrcode_uri":"75bb0010835c6789e6dd",
+                        "shield_comment_notice":0,
+                        "shield_digg_notice":0,
+                        "shield_follow_notice":0,
+                        "short_id":"727274822",
+                        "show_image_bubble":false,
+                        "signature":"德拉科科科科科科科",
+                        "special_lock":1,
+                        "status":1,
+                        "story_count":0,
+                        "story_open":false,
+                        "sync_to_toutiao":0,
+                        "total_favorited":0,
+                        "tw_expire_time":0,
+                        "twitter_id":"",
+                        "twitter_name":"",
+                        "type_label":null,
+                        "uid":"71235698778",
+                        "unique_id":"y2564821947",
+                        "unique_id_modify_time":1600090291,
+                        "user_canceled":false,
+                        "user_mode":0,
+                        "user_period":0,
+                        "user_rate":1,
+                        "user_tags":null,
+                        "verification_type":1,
+                        "verify_info":"",
+                        "video_icon":{
+                            "height":720,
+                            "uri":"",
+                            "url_list":[
+                            ],
+                            "width":720
+                        },
+                        "weibo_name":"",
+                        "weibo_schema":"",
+                        "weibo_url":"",
+                        "weibo_verify":"",
+                        "white_cover_url":null,
+                        "with_commerce_entry":false,
+                        "with_dou_entry":false,
+                        "with_fusion_shop_entry":false,
+                        "with_shop_entry":false,
+                        "youtube_channel_id":"",
+                        "youtube_channel_title":"",
+                        "youtube_expire_time":0
+                    },
+                    "banner_list":null,
+                    "cha_attrs":null,
+                    "cha_name":"热巴热巴热巴",
+                    "cid":"1597726178104324",
+                    "collect_stat":0,
+                    "connect_music":[
+                    ],
+                    "desc":"",
+                    "extra_attr":{
+                        "is_live":false
+                    },
+                    "hashtag_profile":"https://p6-dy-ipv6.byteimg.com/img/tos-cn-p-0015/68f042a9d9f44f18915ee68e60d311cf~noop.jpeg?from=3930825231",
+                    "is_challenge":0,
+                    "is_commerce":false,
+                    "is_pgcshow":false,
+                    "schema":"aweme://aweme/challenge/detail?cid=1597726178104324",
+                    "share_info":{
+                        "bool_persist":0,
+                        "share_desc":"在抖音，记录美好生活",
+                        "share_desc_info":"我在抖音参加#热巴热巴热巴 ",
+                        "share_quote":"",
+                        "share_signature_desc":"",
+                        "share_signature_url":"",
+                        "share_title":"我在抖音参加#热巴热巴热巴 ",
+                        "share_title_myself":"",
+                        "share_title_other":"",
+                        "share_url":"https://www.iesdouyin.com/share/challenge/1597726178104324/?u_code=0",
+                        "share_weibo_desc":"我在抖音参加#热巴热巴热巴 "
+                    },
+                    "show_items":null,
+                    "sub_type":0,
+                    "tag":0,
+                    "type":0,
+                    "user_count":115,
+                    "view_count":1595798
+                },
+                "items":null,
+                "position":null
+            }
+        ],
+        "cursor":20,
+        "extra":{
+            "fatal_item_ids":[
+            ],
+            "logid":"202009142131310100260780803119D2F7",
+            "now":1600090291000,
+            "search_request_id":""
+        },
+        "has_more":1,
+        "is_match":false,
+        "keyword_disabled":0,
+        "log_pb":{
+            "impr_id":"202009142131310100260780803119D2F7"
+        },
+        "qc":"",
+        "status_code":0
+    },
+    "msg":"success"
+}
+```
+
+
