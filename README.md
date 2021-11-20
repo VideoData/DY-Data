@@ -37,7 +37,7 @@
   <summary>还有其他短视频平台可以交流吗？</summary>
   目前可供学习交流的平台是抖音、Tiktok，快手大家有兴趣可以一起讨论交流。
 </details>
-
+ 
 <details>
   <summary>TikTok的项目哪里可以看</summary>
   TikTok->https://github.com/VideoData/TiKTok-data
